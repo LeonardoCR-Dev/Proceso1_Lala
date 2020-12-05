@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1183,6266</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1007,6266</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtaerDatosXML_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -101,7 +101,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Leer XML" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+    <Assign DisplayName="Read XML" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_15">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[XMLString]</OutArgument>
       </Assign.To>
@@ -109,7 +109,7 @@
         <InArgument x:TypeArguments="x:String">[file.ReadAllText("Data\Input\"+in_ArchivoXML)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Reemplazar &quot;:&quot; por &quot;_&quot;" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+    <Assign DisplayName="Replace &quot;:&quot; with &quot;_&quot;" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_16">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[XMLString]</OutArgument>
       </Assign.To>

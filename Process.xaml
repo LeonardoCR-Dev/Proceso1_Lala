@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869,1044</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1016,3085</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -65,8 +65,8 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1026,3020" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -94,7 +94,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtaerDatosXML - Copy (1) workflow" sap:VirtualizedContainerService.HintSize="984,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="XML\ExtaerDatosXML.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtaerDatosXML workflow" sap:VirtualizedContainerService.HintSize="984,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="XML\ExtaerDatosXML.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">[XML_ImporteTotal]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">[XML_Fecha]</OutArgument>
@@ -116,14 +116,14 @@
         <OutArgument x:TypeArguments="x:String" x:Key="out_Referencia">[SAP_Referencia]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Validacion" sap:VirtualizedContainerService.HintSize="984,2552" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Validacion" sap:VirtualizedContainerService.HintSize="984,2565" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="942,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Flag validation" sap:VirtualizedContainerService.HintSize="942,60" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">[Validacion]</OutArgument>
         </Assign.To>
@@ -131,7 +131,7 @@
           <InArgument x:TypeArguments="x:Boolean">True</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[SAP_Fecha.Equals(XML_Fecha)]" sap:VirtualizedContainerService.HintSize="942,400" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[SAP_Fecha.Equals(XML_Fecha)]" DisplayName="If - Validation date" sap:VirtualizedContainerService.HintSize="942,402" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Else>
           <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
@@ -158,7 +158,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[SAP_Texto.Equals(XML_Texto)]" sap:VirtualizedContainerService.HintSize="942,400" sap2010:WorkflowViewState.IdRef="If_2">
+      <If Condition="[SAP_Texto.Equals(XML_Texto)]" DisplayName="If - Validation Text" sap:VirtualizedContainerService.HintSize="942,402" sap2010:WorkflowViewState.IdRef="If_2">
         <If.Else>
           <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
@@ -185,7 +185,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[SAP_Importe.Equals(XML_ImporteTotal)]" sap:VirtualizedContainerService.HintSize="942,400" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[SAP_Importe.Equals(XML_ImporteTotal)]" DisplayName="If - Validation Import" sap:VirtualizedContainerService.HintSize="942,402" sap2010:WorkflowViewState.IdRef="If_3">
         <If.Else>
           <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
@@ -212,7 +212,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[SAP_Referencia.Equals(XML_FolioFactura)]" sap:VirtualizedContainerService.HintSize="942,400" sap2010:WorkflowViewState.IdRef="If_4">
+      <If Condition="[SAP_Referencia.Equals(XML_FolioFactura)]" DisplayName="If - vValidation Folio" sap:VirtualizedContainerService.HintSize="942,402" sap2010:WorkflowViewState.IdRef="If_4">
         <If.Else>
           <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
@@ -239,11 +239,11 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[Validacion]" sap:VirtualizedContainerService.HintSize="942,600" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[Validacion]" DisplayName="If - Validation" sap:VirtualizedContainerService.HintSize="942,605" sap2010:WorkflowViewState.IdRef="If_7">
         <If.Then>
-          <If Condition="[XML_TieneRetencion]" sap:VirtualizedContainerService.HintSize="797,452" sap2010:WorkflowViewState.IdRef="If_6">
+          <If Condition="[XML_TieneRetencion]" DisplayName="If - Retention" sap:VirtualizedContainerService.HintSize="797,455" sap2010:WorkflowViewState.IdRef="If_6">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Sequence DisplayName="Retention - True" sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_16">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -254,7 +254,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,304" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Retention - False" sap:VirtualizedContainerService.HintSize="376,305" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -268,11 +268,9 @@
                     <InArgument x:TypeArguments="s:String[]">[{SAP_Texto,DateTime.Now.ToString,falla}]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="s:String[]" x:Key="in_Datos">
-                      <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Arrglo_Datos" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="s:String[]" x:Key="in_Datos">[Arrglo_Datos]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>

@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869,661</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1007,529</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendMAil_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -70,31 +70,28 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendMAil" sap:VirtualizedContainerService.HintSize="755,486" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Send an e-mail with the notification that the bot has finished and in case there is any failure with an invoice, send an xlsx file with the information " DisplayName="SendMAil" sap:VirtualizedContainerService.HintSize="755,427" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="713,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Enviando correo" />
-    <If Condition="[in_Archivo.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="713,293" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[in_Archivo.Equals(&quot;&quot;)]" DisplayName="Validation if file exists" sap:VirtualizedContainerService.HintSize="713,293" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[in_Body]" Cc="[in_Copy]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="[in_Subject]" To="[in_To]">
+        <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[in_Body]" Cc="[in_Copy]" DisplayName="Send Outlook Mail Message without file" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="[in_Subject]" To="[in_To]">
           <ui:SendOutlookMail.Files>
             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
           </ui:SendOutlookMail.Files>
         </ui:SendOutlookMail>
       </If.Then>
       <If.Else>
-        <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[in_Body]" Cc="[in_Copy]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="[in_Subject]" To="[in_To]">
+        <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[in_Body]" Cc="[in_Copy]" DisplayName="Send Outlook Mail Message with file" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="[in_Subject]" To="[in_To]">
           <ui:SendOutlookMail.Files>
             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-              <InArgument x:TypeArguments="x:String">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Archivo" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Archivo]</InArgument>
             </scg:List>
           </ui:SendOutlookMail.Files>
         </ui:SendOutlookMail>
