@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Serie="TIJ" Folio="24" Fecha="2020-02-18T15:05:31" Sello="L57Rl+wiaylew3JTtxPiMsqE7wywYQ0bH155/+SF6SG2xW93WFXl5e4KwjFjhQCEcjYb7t25qINmnD8i8ou5jSxc/+MwH4rW+j/BA/YLCtLm0xyfAGkjW0DH9eXTeLLVXMeR67hm1NRCZa7tqUNDg72GlHUGbMhY4i1f4caPtSMbPQZSkofZYsXposT1NA6ZN0EuCgZoL1P6HAs3BNA3xB1/y7R67nXVHbYwn6B4AS3IuqIvHIeeN1EziRQ8nNXdll8uKV0RSHM/FPEqfUFc85Fx9l2qoG26CCO+Ik6iiDYEzi/ZpXE+inb/DAT4CXRdAVS6OQ9Y7LLuJAISqCsCZg==" FormaPago="99" NoCertificado="00001000000504174870" Certificado="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" SubTotal="23664.00" Moneda="MXN" Total="1422.00" TipoDeComprobante="I" MetodoPago="PPD" LugarExpedicion="22644">
+	<cfdi:CfdiRelacionados TipoRelacion="04">
+		<cfdi:CfdiRelacionado UUID="2C649D3D-4316-4A7A-A2B4-2571F29F266B" />
+	</cfdi:CfdiRelacionados>
+	<cfdi:Emisor RegimenFiscal="601" Rfc="SIN071219ME7" Nombre="Skit Industrial S de R.L de C.V"></cfdi:Emisor>
+	<cfdi:Receptor Rfc="LOP101111GH5" Nombre="LALA OPERACIONES S.A. DE C.V." UsoCFDI="G03"></cfdi:Receptor>
+	<cfdi:Conceptos>
+		<cfdi:Concepto ClaveProdServ="50201706" ClaveUnidad="H87" Cantidad="3.00" Unidad="PIEZA" NoIdentificacion="CAF-179" Descripcion="CAFE MOLIDO REGULAR CAFFENIO 1KG" ValorUnitario="236.00" Importe="708.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="708.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="50201700" ClaveUnidad="H87" Cantidad="3.00" Unidad="PIEZA" NoIdentificacion="CAF-39" Descripcion="CREMA PARA CAFÉ POLVO COFFEE-MATE BOTE 1.41 KG." ValorUnitario="180.00" Importe="540.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="540.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="52151500" ClaveUnidad="XBX" Cantidad="1.00" Unidad="CAJA 10" NoIdentificacion="DES-16" Descripcion="CUCHARA DE PLASTICO MEDIANA C/1000" ValorUnitario="150.00" Importe="150.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="150.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="24.00" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+	</cfdi:Conceptos>
+	<cfdi:Impuestos TotalImpuestosTrasladados="24.00">
+		<cfdi:Traslados>
+			<cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+			<cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="24.00" />
+		</cfdi:Traslados>
+	</cfdi:Impuestos>
+	<cfdi:Complemento>
+		<tfd:TimbreFiscalDigital xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.1" UUID="F0AA9C09-CC84-46A9-8328-A086C6AB9C65" FechaTimbrado="2020-09-07T17:05:40" RfcProvCertif="MAS0810247C0" SelloCFD="L57Rl+wiaylew3JTtxPiMsqE7wywYQ0bH155/+SF6SG2xW93WFXl5e4KwjFjhQCEcjYb7t25qINmnD8i8ou5jSxc/+MwH4rW+j/BA/YLCtLm0xyfAGkjW0DH9eXTeLLVXMeR67hm1NRCZa7tqUNDg72GlHUGbMhY4i1f4caPtSMbPQZSkofZYsXposT1NA6ZN0EuCgZoL1P6HAs3BNA3xB1/y7R67nXVHbYwn6B4AS3IuqIvHIeeN1EziRQ8nNXdll8uKV0RSHM/FPEqfUFc85Fx9l2qoG26CCO+Ik6iiDYEzi/ZpXE+inb/DAT4CXRdAVS6OQ9Y7LLuJAISqCsCZg==" NoCertificadoSAT="00001000000404486074" SelloSAT="E4V4/Onokld0rRoyzL81u1Ke+Rsl+hDiU/b388SDnRssgTerZu3huTuunblEf6OtZKHC9cokRbAXbdariX0a7r3yb/J6RyvARJjkCTnkn/dM7gE599pq8TfsaRdr7x9BCJI1jRuOk7VjVkiHlqf0l05QWqVBG4L5TN5xJOYeaP9rRrg6KRIZh0jQ6B6AXPtZE4RsSAFRQrhBmCEkqw6810lhJQ3AxG8IP3afNETJUAWNsoB88G32/G0GTUx0/m2C6RxmCbGF+ZZF5rmtvUy8da+U+pKVgFRQOTHzY926tkoTSyaGaGxjCvEjUGd6m5LwqYFXuMuKj5hYLR9dT7IW2w==" />
+	</cfdi:Complemento>
+</cfdi:Comprobante>
