@@ -2,7 +2,6 @@
   <x:Members>
     <x:Property Name="out_ImporteTotal" Type="OutArgument(x:String)" />
     <x:Property Name="out_Fecha" Type="OutArgument(x:String)" />
-    <x:Property Name="out_NombreEmisor" Type="OutArgument(x:String)" />
     <x:Property Name="out_Texto" Type="OutArgument(x:String)" />
     <x:Property Name="out_IvaPorcentaje" Type="OutArgument(x:String)" />
     <x:Property Name="out_Iva" Type="OutArgument(x:String)" />
@@ -10,11 +9,12 @@
     <x:Property Name="out_Retencion" Type="OutArgument(x:String)" />
     <x:Property Name="out_TieneRetencion" Type="OutArgument(x:Boolean)" />
     <x:Property Name="in_ArchivoXML" Type="InArgument(x:String)" />
+    <x:Property Name="out_NameEmisor" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1007,6266</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>927,6266</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtaerDatosXML_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -50,7 +50,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -77,6 +77,8 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -85,15 +87,15 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Extrae los datos de un XML que se pasa por un argumento de entrada (in_ArchivoXML)" DisplayName="Extraer Datos XML" sap:VirtualizedContainerService.HintSize="480,6201" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap2010:Annotation.AnnotationText="Extracts the data from an XML that is passed through an input argument (in_XML file)" DisplayName="Extract Data XML" sap:VirtualizedContainerService.HintSize="480,6201" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="XMLString" />
       <Variable x:TypeArguments="sxl:XDocument" Name="XMLDocument" />
-      <Variable x:TypeArguments="x:String" Name="Dia" />
-      <Variable x:TypeArguments="x:String" Name="Mes" />
-      <Variable x:TypeArguments="x:String" Name="Año" />
-      <Variable x:TypeArguments="x:String" Name="fechatemp" />
-      <Variable x:TypeArguments="s:String[]" Name="arrayFecha" />
+      <Variable x:TypeArguments="x:String" Name="Day" />
+      <Variable x:TypeArguments="x:String" Name="Month" />
+      <Variable x:TypeArguments="x:String" Name="Year" />
+      <Variable x:TypeArguments="x:String" Name="TempDate" />
+      <Variable x:TypeArguments="s:String[]" Name="ArrayDate" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -118,7 +120,7 @@
       </Assign.Value>
     </Assign>
     <ui:DeserializeXml DisplayName="Deserialize XML" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_2" XMLDocument="[XMLDocument]" XMLString="[XMLString]" />
-    <TryCatch DisplayName="Try Nombre Emisor" sap:VirtualizedContainerService.HintSize="438,692" sap2010:WorkflowViewState.IdRef="TryCatch_20">
+    <TryCatch DisplayName="Try Name Emisor" sap:VirtualizedContainerService.HintSize="438,692" sap2010:WorkflowViewState.IdRef="TryCatch_20">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -132,15 +134,15 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Extract RFC_Receptor" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+          <Assign DisplayName="Extract Name Emisor" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_43">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[out_NombreEmisor]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[out_NameEmisor]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[XMLDocument.Element("cfdi_Comprobante").Element("cfdi_Emisor").Attribute("Nombre").Value]</InArgument>
             </Assign.Value>
           </Assign>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[&quot;Nombre Emisor &quot; + out_NombreEmisor]" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[&quot;Nombre Emisor &quot; + out_NameEmisor]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
@@ -157,7 +159,7 @@
             </ActivityAction.Argument>
             <Assign DisplayName="Extract Nombre" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_44">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[out_NombreEmisor]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[out_NameEmisor]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">-</InArgument>
@@ -240,7 +242,7 @@
           </Assign>
           <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_66">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[fechatemp]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[TempDate]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[out_Fecha.Substring(0,10)]</InArgument>
@@ -248,10 +250,10 @@
           </Assign>
           <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_67">
             <Assign.To>
-              <OutArgument x:TypeArguments="s:String[]">[arrayFecha]</OutArgument>
+              <OutArgument x:TypeArguments="s:String[]">[ArrayDate]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="s:String[]">[Split(fechatemp,"-")]</InArgument>
+              <InArgument x:TypeArguments="s:String[]">[Split(TempDate,"-")]</InArgument>
             </Assign.Value>
           </Assign>
           <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_68">
@@ -259,7 +261,7 @@
               <OutArgument x:TypeArguments="x:String">[out_Fecha]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[arrayFecha(2).ToString+"."+arrayFecha(1).ToString+"."+arrayFecha(0).ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[ArrayDate(2).ToString+"."+ArrayDate(1).ToString+"."+ArrayDate(0).ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="[&quot;FECHA&quot;+out_Fecha]" />
@@ -473,7 +475,7 @@
         <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,321" sap2010:WorkflowViewState.IdRef="Catch`1_26">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -508,7 +510,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:CommentOut DisplayName="Mostrar Datos" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+    <ui:CommentOut DisplayName="Data" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_35">
           <sap:WorkflowViewStateService.ViewState>
@@ -516,7 +518,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Información Archivo XML" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;DATOS: &quot;+in_ArchivoXML+Environment.NewLine+Environment.NewLine+&quot;NOMBRE ACREDOR: &quot;+out_NombreEmisor+Environment.NewLine+&quot;FOLIO FACTURA: &quot;+out_FolioFactura+Environment.NewLine+&quot;IMPORTE TOTAL: &quot;+out_ImporteTotal+Environment.NewLine+&quot;FECHA: &quot;+out_Fecha+Environment.NewLine+&quot;TEXTO(FOLIO FISCAL): &quot;+out_Texto+Environment.NewLine+&quot;IVA: &quot;+out_Iva+Environment.NewLine+&quot;RETENCION: &quot;+out_Retencion]">
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Información Archivo XML" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;DATOS: &quot;+in_ArchivoXML+Environment.NewLine+Environment.NewLine+&quot;NOMBRE ACREDOR: &quot;+out_NameEmisor+Environment.NewLine+&quot;FOLIO FACTURA: &quot;+out_FolioFactura+Environment.NewLine+&quot;IMPORTE TOTAL: &quot;+out_ImporteTotal+Environment.NewLine+&quot;FECHA: &quot;+out_Fecha+Environment.NewLine+&quot;TEXTO(FOLIO FISCAL): &quot;+out_Texto+Environment.NewLine+&quot;IVA: &quot;+out_Iva+Environment.NewLine+&quot;RETENCION: &quot;+out_Retencion]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

@@ -2,13 +2,13 @@
   <x:Members>
     <x:Property Name="in_SubTotal" Type="InArgument(x:String)" />
     <x:Property Name="in_Iva" Type="InArgument(x:String)" />
-    <x:Property Name="in_Tasa" Type="InArgument(x:String)" />
-    <x:Property Name="in_FolioFactura" Type="InArgument(x:String)" />
+    <x:Property Name="in_Folio" Type="InArgument(x:String)" />
+    <x:Property Name="in_Rate" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869,4409</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>927,4409</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Agregar_Retencion_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -57,12 +57,12 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Agregar Retencion" sap:VirtualizedContainerService.HintSize="526,4344" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Add Withholdings" sap:VirtualizedContainerService.HintSize="526,4437" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Int32" Name="Importe_SAP" />
-      <Variable x:TypeArguments="x:String" Name="CentroCoste" />
-      <Variable x:TypeArguments="x:String" Name="TipoImpuesto" />
-      <Variable x:TypeArguments="x:String" Name="Texto" />
+      <Variable x:TypeArguments="x:Int32" Name="Import_SAP" />
+      <Variable x:TypeArguments="x:String" Name="CostCenter" />
+      <Variable x:TypeArguments="x:String" Name="TypeTax" />
+      <Variable x:TypeArguments="x:String" Name="Text" />
       <Variable x:TypeArguments="x:String" Name="Division" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -72,7 +72,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:Int32">[Importe_SAP]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32">[Import_SAP]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(in_SubTotal)+Convert.ToInt32(in_Iva)]</InArgument>
@@ -93,7 +93,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Importe'" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[Importe_SAP.ToString]">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Importe'" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[Import_SAP.ToString]">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cfca8a87-cee7-4d8e-a194-587967eb98b1" InformativeScreenshot="6a78aedcd0e85eb74ea563280bc93195" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/txtINVFO-WRBTR' /&gt;">
           <ui:Target.TimeoutMS>
@@ -120,7 +120,12 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <If Condition="[in_Tasa.Contains(&quot;0.16&quot;)]" sap:VirtualizedContainerService.HintSize="484,282" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="Valid is kept 16% vat " Condition="[in_Rate.Contains(&quot;0.16&quot;)]" DisplayName="If - Iva" sap:VirtualizedContainerService.HintSize="484,313" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'ComboBox  Indicador IVA'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="Q2[k(enter)]">
           <ui:TypeInto.Target>
@@ -136,7 +141,12 @@
         </ui:TypeInto>
       </If.Then>
     </If>
-    <If Condition="[in_Tasa.Contains(&quot;0.08&quot;)]" sap:VirtualizedContainerService.HintSize="484,282" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="Valid is kept 8% vat " Condition="[in_Rate.Contains(&quot;0.08&quot;)]" DisplayName="If- Iva" sap:VirtualizedContainerService.HintSize="484,313" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'ComboBox  Indicador IVA'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="Q4[k(enter)]">
           <ui:TypeInto.Target>
@@ -152,7 +162,12 @@
         </ui:TypeInto>
       </If.Then>
     </If>
-    <If Condition="[in_Tasa.Contains(&quot;0.11&quot;)]" sap:VirtualizedContainerService.HintSize="484,282" sap2010:WorkflowViewState.IdRef="If_3">
+    <If sap2010:Annotation.AnnotationText="Valid is kept 11% vat " Condition="[in_Rate.Contains(&quot;0.11&quot;)]" DisplayName="If - Iva" sap:VirtualizedContainerService.HintSize="484,313" sap2010:WorkflowViewState.IdRef="If_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'ComboBox  Indicador IVA'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="Q1[k(enter)]">
           <ui:TypeInto.Target>
@@ -189,7 +204,7 @@
           </ui:Target>
         </ui:Click.Target>
       </ui:Click>
-      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Importe'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[Importe_SAP.ToString]">
+      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Importe'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[Import_SAP.ToString]">
         <ui:TypeInto.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c708774f-628c-4ead-a6e4-226aad18cb80" InformativeScreenshot="b8763889b88fd53c745c1bbea60223f8" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap colTooltip='Importe' id='usr/subITEMS:SAPLFSKB:0100/tblSAPLFSKBTABLE' tableRow='0' /&gt;">
             <ui:Target.TimeoutMS>
@@ -228,18 +243,18 @@
           </ui:Target>
         </ui:GetValue.Target>
         <ui:GetValue.Value>
-          <OutArgument x:TypeArguments="x:String">[TipoImpuesto]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[TypeTax]</OutArgument>
         </ui:GetValue.Value>
       </ui:GetValue>
       <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[TipoImpuesto]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[TypeTax]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[TipoImpuesto.Substring(0,2)]</InArgument>
+          <InArgument x:TypeArguments="x:String">[TypeTax.Substring(0,2)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Ind.impuest...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="False" Text="[TipoImpuesto]">
+      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Ind.impuest...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="False" Text="[TypeTax]">
         <ui:TypeInto.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f788c8c6-ecd5-4753-9364-95f7f448da62" InformativeScreenshot="edc8a4c04d2c3a4b60a57a6201dedd86" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap colTooltip='Indicador impuestos' id='usr/subITEMS:SAPLFSKB:0100/tblSAPLFSKBTABLE' tableRow='0' /&gt;">
             <ui:Target.TimeoutMS>
@@ -263,7 +278,7 @@
           </ui:Target>
         </ui:GetValue.Target>
         <ui:GetValue.Value>
-          <OutArgument x:TypeArguments="x:String">[CentroCoste]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[CostCenter]</OutArgument>
         </ui:GetValue.Value>
       </ui:GetValue>
       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'CTextField  División'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
@@ -293,7 +308,7 @@
           </ui:Target>
         </ui:GetValue.Target>
         <ui:GetValue.Value>
-          <OutArgument x:TypeArguments="x:String">[Texto]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[Text]</OutArgument>
         </ui:GetValue.Value>
       </ui:GetValue>
     </Sequence>
@@ -340,7 +355,7 @@
           </ui:Target>
         </ui:Click.Target>
       </ui:Click>
-      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Número'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="False" Text="[in_FolioFactura]">
+      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Número'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="False" Text="[in_Folio]">
         <ui:TypeInto.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a7bf1c17-2618-4d41-9f5f-a10fb496551d" InformativeScreenshot="7650ef05632773fc5cd4a2f9bd5f4864" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMORE/ssubPAGE:SAPLFDCB:0050/txtINVFO-ZUONR' /&gt;">
             <ui:Target.TimeoutMS>
@@ -367,7 +382,7 @@
           </ui:Target>
         </ui:Click.Target>
       </ui:Click>
-      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Texto'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" SendWindowMessages="False" SimulateType="False" Text="[Texto]">
+      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Texto'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" SendWindowMessages="False" SimulateType="False" Text="[Text]">
         <ui:TypeInto.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d98a0f18-dd40-4fcb-bbf9-c57bec435824" InformativeScreenshot="29d907ea089a0b3eda69b9e0b46898d5" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMORE/ssubPAGE:SAPLFDCB:0050/txtINVFO-BKTXT' /&gt;">
             <ui:Target.TimeoutMS>
