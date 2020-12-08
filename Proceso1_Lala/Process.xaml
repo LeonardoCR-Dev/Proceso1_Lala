@@ -1,0 +1,214 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_Validation" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_ValidationWithholdings" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>866,1347</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="26">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="376,1282" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem]" Name="Id" />
+      <Variable x:TypeArguments="x:String" Name="XML_Import" />
+      <Variable x:TypeArguments="x:String" Name="FileXML" />
+      <Variable x:TypeArguments="x:String" Name="XML_UUID" />
+      <Variable x:TypeArguments="x:String" Name="XML_Date" />
+      <Variable x:TypeArguments="x:String" Name="XML_Text" />
+      <Variable x:TypeArguments="x:String" Name="XML_IvaNumber" />
+      <Variable x:TypeArguments="x:String" Name="XML_Iva" />
+      <Variable x:TypeArguments="x:String" Name="XML_Folio" />
+      <Variable x:TypeArguments="x:String" Name="XML_Retencion" />
+      <Variable x:TypeArguments="x:Boolean" Name="Retencion" />
+      <Variable x:TypeArguments="x:String" Name="XML_NameEmisor" />
+      <Variable x:TypeArguments="x:String" Name="SAP_Date" />
+      <Variable x:TypeArguments="x:String" Name="SAP_Text" />
+      <Variable x:TypeArguments="x:String" Name="SAP_Import" />
+      <Variable x:TypeArguments="x:String" Name="SAP_Reference" />
+      <Variable x:TypeArguments="x:String" Name="SAP_Acredor" />
+      <Variable x:TypeArguments="x:String" Name="SAP_Moneda" />
+      <Variable x:TypeArguments="x:String" Name="SAP_NoDoc" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double Click" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bbbe4595-7480-4db5-944e-718cde656c04" InformativeScreenshot="135b9faed944d31805e60fc059edc675" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Contabilizar docs. preliminares: Lista' /&gt;&lt;sap colName='BELNR' id='usr/cntlGRID1/shellcont/shell' tableRow='{{Id}}' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'CTextField Texto'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+      <ui:GetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="251bdee3-0fd0-451e-b783-8501973c6f8a" InformativeScreenshot="ae3a2eeea4f679f80e91bb8902931df7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/ctxtINVFO-SGTXT' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:GetValue.Target>
+      <ui:GetValue.Value>
+        <OutArgument x:TypeArguments="x:String">[XML_UUID]</OutArgument>
+      </ui:GetValue.Value>
+    </ui:GetValue>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Intranet\Search_UUID.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_NameXML">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="FileXML" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_UUID">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_UUID" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Como aun no se pueden descargar facturas lo que hacemos es darle un archivo xml ya descargado para pruebas" />
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtractDataXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XML\ExtractDataXML.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Import" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Date" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Text" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Iva" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_IvaNumber" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Folio" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Retencion" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">
+          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Retencion" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Data\Input\&quot;+FileXML" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_NameEmisor" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get_Info workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SAP\Get_Info.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Date">[SAP_Date]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Text">[SAP_Text]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Import">[SAP_Import]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Reference">[SAP_Reference]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validation workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Common\Validation.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validation" />
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ValidationWithholdings" />
+        <InArgument x:TypeArguments="x:String" x:Key="SAP_Fecha">[SAP_Date]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="SAP_Texto">[SAP_Text]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="SAP_Importe">[SAP_Import]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="SAP_Referencia">[SAP_Reference]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="XML_ImporteTotal">[XML_Import]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="XML_Fecha">[XML_Date]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="XML_NombreEmisor">[XML_NameEmisor]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="XML_Texto">[XML_Text]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="XML_IvaPorcentaje">[XML_Iva]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="XML_Iva">[XML_IvaNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="XML_FolioFactura">[XML_Folio]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="XML_TieneRetencion">[Retencion]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="XML_Retencion">[XML_Retencion]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Deve de regresar a la lista de preliminares" />
+  </Sequence>
+</Activity>

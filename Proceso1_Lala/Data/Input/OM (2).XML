@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante Version="3.3"
+	xmlns:cfdi="http://www.sat.gob.mx/cfd/3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Folio="105029" Fecha="2020-08-01T18:50:20" NoCertificado="00001000000406729068" Certificado="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" Moneda="MXN" TipoDeComprobante="I" MetodoPago="PPD" FormaPago="99" CondicionesDePago="Crédito" SubTotal="19111.73.00" Total="22794.00" LugarExpedicion="78146" Sello="C6gF/Sd++s3e5qpohjzP5Z18p+dw16v+MIakp9V14UzXtiJAr5T07jPTUS1g5iAFoHyUqcJjwfEcAu/b6l4rAHvfBxqjuW6PgTXuwaQd89O9uWY9D1GN+ewne/FEABghF1P634cndYXcmCFyXJMX1f9zJ8Y+SlR0GZyiNbXAIlNGL+Ln93EgYgp+D9WUw8qcFATdvBZidzPvuZZ4/f7whyUoc2vnCVhOT9Io8n/NVl+PR1niFu7WCqNhlBCc/3ogPNwJLpwp3gpA8Bajm12t9LgGLYtlyQFVCWGN+heeU2C+5l6wx84FHJLL+gE+aYHNCKhmzqO3S7NwKAZW63yqmQ==">
+	<cfdi:Emisor Rfc="NAMC861228LN7" Nombre="CLAUDIA NAVA MENDOZA" RegimenFiscal="621"/>
+	<cfdi:Receptor Rfc="CLD0507145H6" Nombre="COMERCIALIZADORA DE LACTEOS Y DERIVADOS, S.A. DE C.V." UsoCFDI="G03"/>
+	<cfdi:Conceptos>
+		<cfdi:Concepto ClaveProdServ="78181500" Cantidad="1.00" ClaveUnidad="ACT" Descripcion="SERVICIO DE RESCATE MECANICO DE TRACTOCAMION E496 , UBICACIÓN VILLA HIDALGO Y VILLA DE ZARAGOZA, OPERADOR ALBERTO PEÑA CEL. 8711028408" ValorUnitario="2500.00" Importe="2500.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2500.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="400.00"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="78181500" Cantidad="1.00" ClaveUnidad="ACT" Descripcion="VIAJE REDONDO DE SERVICIO DE RESCATE EN UBICACIÓN DE TRACTOCAMION." ValorUnitario="2500.00" Importe="2500.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2500.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="400.00"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="78181500" Cantidad="1.00" ClaveUnidad="ACT" Descripcion="FALLA MECANICA DE BOLSA DE SUSPENSION, REPARACION DE LINEA DE AIRE, CON COPLE T DE BRONCE A BOLSA DE SUSPENSIÓN , ENDEREZAR BASE DE BOLSA DE SUSPENSION , SUSTITUIR TUERCA VOLTEADAS DE BOLSA DE SUSPENSION ." ValorUnitario="14650.00" Importe="14650.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="14650.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="2344.00"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+	</cfdi:Conceptos>
+	<cfdi:Impuestos TotalImpuestosTrasladados="3144.00">
+		<cfdi:Traslados>
+			<cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="3144.00"/>
+		</cfdi:Traslados>
+	</cfdi:Impuestos>
+	<cfdi:Complemento>
+		<tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" Version="1.1" UUID="E561D9BE-1510-4A73-B36A-D78A58728837" FechaTimbrado="2020-10-28T18:50:20" RfcProvCertif="TBN040609RKA" SelloCFD="C6gF/Sd++s3e5qpohjzP5Z18p+dw16v+MIakp9V14UzXtiJAr5T07jPTUS1g5iAFoHyUqcJjwfEcAu/b6l4rAHvfBxqjuW6PgTXuwaQd89O9uWY9D1GN+ewne/FEABghF1P634cndYXcmCFyXJMX1f9zJ8Y+SlR0GZyiNbXAIlNGL+Ln93EgYgp+D9WUw8qcFATdvBZidzPvuZZ4/f7whyUoc2vnCVhOT9Io8n/NVl+PR1niFu7WCqNhlBCc/3ogPNwJLpwp3gpA8Bajm12t9LgGLYtlyQFVCWGN+heeU2C+5l6wx84FHJLL+gE+aYHNCKhmzqO3S7NwKAZW63yqmQ==" NoCertificadoSAT="00001000000504587508" SelloSAT="J+4XQcrlI8bjnhRcQ0uw/f+ZQAtqf3Yxl/9pZDfeaYrZstwSQ8hlrv2NefZSkpsvi+rxzykZ9WAjNFsOzF21XlkWt+apIlEVWHwnFKijvOUgiCfAMQ5BQmyLzEaq1T6/hGwwd7yPJH36isLBouN5k+MSebNomJ2MQflcFFDBVXlQSvRr/9tC6VbcQWfqCFHpoFKGfCatJcDeqNn4LaZ3RA4lMwMevKV61oYLy3ubm7p25jrysxy1zwkLh2BXSCndgDlRhIn2gML2AvWALuN6LgXlq42t3n5LQJ/rfA2I6+VzLoCZ0eKYzbQeoVfk4JMuqcabqwNhyJDFFYbKD8Cpug=="/>
+	</cfdi:Complemento>
+</cfdi:Comprobante>
