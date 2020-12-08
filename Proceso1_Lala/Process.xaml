@@ -142,7 +142,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_UUID">[XML_UUID]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Como aun no se pueden descargar facturas lo que hacemos es darle un archivo xml ya descargado para pruebas" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Como aun no se pueden descargar facturas lo que hacemos es darle un archivo xml ya descargado para pruebas " />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtractDataXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XML\ExtractDataXML.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">[XML_Import]</OutArgument>
