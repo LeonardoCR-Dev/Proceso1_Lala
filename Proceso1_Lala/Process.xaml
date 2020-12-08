@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>866,1347</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1055,1347</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -69,7 +69,6 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="376,1282" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -139,47 +138,23 @@
     </ui:GetValue>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Intranet\Search_UUID.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_NameXML">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="FileXML" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_UUID">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_UUID" />
-        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_NameXML">[FileXML]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_UUID">[XML_UUID]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:Comment sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Como aun no se pueden descargar facturas lo que hacemos es darle un archivo xml ya descargado para pruebas" />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtractDataXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XML\ExtractDataXML.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Import" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Date" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Text" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Iva" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_IvaNumber" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Folio" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Retencion" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">
-          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Retencion" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Data\Input\&quot;+FileXML" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_NameEmisor" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">[XML_Import]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">[XML_Date]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">[XML_Text]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">[XML_Iva]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">[XML_IvaNumber]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">[XML_Folio]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">[XML_Retencion]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">[Retencion]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">["Data\Input\"+FileXML]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">[XML_NameEmisor]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get_Info workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SAP\Get_Info.xaml">
