@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1055,1387</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850,1393</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -72,7 +72,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="376,1282" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="376,1288" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[in_TransactionItem]" Name="Id" />
       <Variable x:TypeArguments="x:String" Name="XML_Import" />
@@ -100,28 +100,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double Click" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-      <ui:Click.CursorPosition>
-        <ui:CursorPosition Position="Center">
-          <ui:CursorPosition.OffsetX>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetX>
-          <ui:CursorPosition.OffsetY>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetY>
-        </ui:CursorPosition>
-      </ui:Click.CursorPosition>
-      <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bbbe4595-7480-4db5-944e-718cde656c04" InformativeScreenshot="135b9faed944d31805e60fc059edc675" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Contabilizar docs. preliminares: Lista' /&gt;&lt;sap colName='BELNR' id='usr/cntlGRID1/shellcont/shell' tableRow='{{Id}}' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:Click.Target>
-    </ui:Click>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Select_Factura_SAP workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP\Select_Factura_SAP.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="Id">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Id" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'CTextField Texto'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
       <ui:GetValue.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="251bdee3-0fd0-451e-b783-8501973c6f8a" InformativeScreenshot="ae3a2eeea4f679f80e91bb8902931df7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/ctxtINVFO-SGTXT' /&gt;">
@@ -146,36 +131,16 @@
     <ui:Comment sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Como aun no se pueden descargar facturas lo que hacemos es darle un archivo xml ya descargado para pruebas " />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtractDataXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XML\ExtractDataXML.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Import" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Date" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Text" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Iva" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_IvaNumber" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Folio" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Retencion" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">
-          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Retencion" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FileXML" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_NameEmisor" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">[XML_Import]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">[XML_Date]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">[XML_Text]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">[XML_Iva]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">[XML_IvaNumber]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">[XML_Folio]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">[XML_Retencion]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">[Retencion]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">[FileXML]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">[XML_NameEmisor]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get_Info workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SAP\Get_Info.xaml">

@@ -5,9 +5,13 @@
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.Mail.Activities": "[1.9.4-preview]",
+    "UiPath.OCR.Activities": "[2.4.1]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.6]",
-    "UiPath.WebAPI.Activities": "[1.6.0]"
+    "UiPath.Vision": "[2.2.0]",
+    "UiPath.WebAPI.Activities": "[1.6.0]",
+    "UiPathTeam.SRC.SAP_ERP": "[1.0.1]",
+    "UiPathTeam.SRC.SAP_S4HANA": "[1.0.1]"
   },
   "webServices": [],
   "entitiesStores": [],
