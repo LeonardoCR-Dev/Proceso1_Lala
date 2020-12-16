@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1055,6365</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>888,6306</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtaerDatosXML_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -88,7 +88,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Extracts the data from an XML that is passed through an input argument (in_XML file)" DisplayName="Extract Data XML" sap:VirtualizedContainerService.HintSize="480,6300" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap2010:Annotation.AnnotationText="Extracts the data from an XML that is passed through an input argument (in_XML file)" DisplayName="Extract Data XML" sap:VirtualizedContainerService.HintSize="480,6201" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="XMLString" />
       <Variable x:TypeArguments="sxl:XDocument" Name="XMLDocument" />
@@ -104,13 +104,12 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="438,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Modifica el nombre del archivo&quot;]" />
     <Assign DisplayName="Read XML" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_15">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[XMLString]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[file.ReadAllText("Data\Input\"+in_ArchivoXML)]</InArgument>
+        <InArgument x:TypeArguments="x:String">[file.ReadAllText(in_ArchivoXML)]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign DisplayName="Replace &quot;:&quot; with &quot;_&quot;" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_16">
@@ -312,7 +311,7 @@
               <OutArgument x:TypeArguments="x:String">[out_ImporteTotal]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[XMLDocument.Element("cfdi_Comprobante").Attribute("SubTotal").Value]</InArgument>
+              <InArgument x:TypeArguments="x:String">[XMLDocument.Element("cfdi_Comprobante").Attribute("Total").Value]</InArgument>
             </Assign.Value>
           </Assign>
           <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[&quot;IMPOIRTE TOTAL&quot;+out_ImporteTotal]" />

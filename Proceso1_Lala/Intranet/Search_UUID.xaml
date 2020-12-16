@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>960,2351</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>888,2517</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadXML_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -66,19 +66,19 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadXML" sap:VirtualizedContainerService.HintSize="873,2146" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadXML" sap:VirtualizedContainerService.HintSize="873,2332" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'firefox.exe eProveedores'" sap:VirtualizedContainerService.HintSize="831,2054" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="ed9cc6896c94674b427585faa5ed15b1" Selector="&lt;html app='firefox.exe' title='eProveedores | Factura Electronica' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'firefox.exe eProveedores'" sap:VirtualizedContainerService.HintSize="831,2240" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="ed9cc6896c94674b427585faa5ed15b1" Selector="&lt;html app='firefox.exe' title='eProveedores | Factura Electronica' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,1908" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,2094" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="ExistIcon" />
               <Variable x:TypeArguments="x:Boolean" Name="ExistDownload" />
@@ -122,6 +122,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
+            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
             <ui:UiElementExists DisplayName="Element Exists 'I'" Exists="[ExistIcon]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e93566cc-529c-43a2-b511-ccb08aabf755" InformativeScreenshot="ee908ba676346271474331a2bac17361" Selector="&lt;webctrl aria-role='grid' id='tbl-catalogo' tag='TABLE' /&gt;&lt;webctrl css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td' tableCol='2' tag='TD' /&gt;" TimeoutMS="3000">
@@ -160,6 +161,7 @@
                 <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;No hay factura&quot;]" />
               </If.Else>
             </If>
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
             <ui:UiElementExists DisplayName="Element Exists 'firefox.exe  Abriendo'" Exists="[ExistDownload]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ff208c85-3863-4a2b-becd-2315583dea34" InformativeScreenshot="e137e10e19f15a9cab7b5ac4fb8781c7" Selector="&lt;wnd app='firefox.exe' cls='MozillaDialogClass' title='Abriendo *' /&gt;&lt;wnd cls='MozillaCompositorWindowClass' /&gt;" TimeoutMS="3000">
@@ -169,9 +171,9 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[ExistDownload]" sap:VirtualizedContainerService.HintSize="755,911" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[ExistDownload]" sap:VirtualizedContainerService.HintSize="755,973" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,764" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,826" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -202,6 +204,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
+                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
                   <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'MozillaCompositorWindow...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
@@ -214,7 +217,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target Element="{x:Null}" Id="65dcc553-6412-491b-a035-91c1c27a3c8a" InformativeScreenshot="152b79dc7554e73dd2672f4cb5629685" Selector="&lt;wnd app='firefox.exe' cls='MozillaDialogClass' title='Abriendo *' /&gt;&lt;wnd cls='MozillaCompositorWindowClass' /&gt;">
+                      <ui:Target Element="{x:Null}" Id="65dcc553-6412-491b-a035-91c1c27a3c8a" InformativeScreenshot="152b79dc7554e73dd2672f4cb5629685" Selector="&lt;wnd app='firefox.exe' cls='MozillaDialogClass' title='Abriendo*' /&gt;&lt;wnd cls='MozillaCompositorWindowClass' /&gt;&lt;ctrl role='client' /&gt;">
                         <ui:Target.ClippingRegion>
                           <ui:Region Rectangle="260, 252, 66, 22" />
                         </ui:Target.ClippingRegion>
@@ -237,7 +240,7 @@
                   </Assign>
                   <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[out_NameXML]">
                     <ui:TypeInto.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ffac4e87-8ac3-4491-a669-9d3d9bb9e413" InformativeScreenshot="45d3b88ca47345a5612862a3c92b4fcc" Selector="&lt;wnd app='firefox.exe' cls='#32770' title='Escriba el nombre con el que guardar el archivo…' /&gt;&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ffac4e87-8ac3-4491-a669-9d3d9bb9e413" InformativeScreenshot="45d3b88ca47345a5612862a3c92b4fcc" Selector="&lt;wnd app='firefox.exe' cls='#32770' title='*guardar*…' /&gt;&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -259,7 +262,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ab16ce3b-ecf2-41b6-b9fe-a1df2a1fe887" InformativeScreenshot="adabe8ba4458b247712407b9e1c5988b" Selector="&lt;wnd app='firefox.exe' cls='#32770' title='Escriba el nombre con el que guardar el archivo…' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Guardar' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ab16ce3b-ecf2-41b6-b9fe-a1df2a1fe887" InformativeScreenshot="adabe8ba4458b247712407b9e1c5988b" Selector="&lt;wnd app='firefox.exe' cls='#32770' title='*guardar*…' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Guardar' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
