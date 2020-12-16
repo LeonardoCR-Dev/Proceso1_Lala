@@ -58,7 +58,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1755,3604</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1755,4223</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Validation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Validation" sap:VirtualizedContainerService.HintSize="1765,3539" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Validation" sap:VirtualizedContainerService.HintSize="1765,3638" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="Array_Datos" />
       <Variable x:TypeArguments="x:String" Name="Failure" />
@@ -130,7 +130,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Validacion" sap:VirtualizedContainerService.HintSize="1723,3447" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence DisplayName="Validacion" sap:VirtualizedContainerService.HintSize="1723,3546" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -253,11 +253,11 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[out_Validation]" DisplayName="If - Validation" sap:VirtualizedContainerService.HintSize="1681,1495" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[out_Validation]" DisplayName="If - Validation" sap:VirtualizedContainerService.HintSize="1681,1594" sap2010:WorkflowViewState.IdRef="If_7">
         <If.Then>
-          <If Condition="[XML_TieneRetencion]" DisplayName="If - Retention" sap:VirtualizedContainerService.HintSize="1260,1347" sap2010:WorkflowViewState.IdRef="If_6">
+          <If Condition="[XML_TieneRetencion]" DisplayName="If - Retention" sap:VirtualizedContainerService.HintSize="1260,1446" sap2010:WorkflowViewState.IdRef="If_6">
             <If.Then>
-              <Sequence DisplayName="Retention - True" sap:VirtualizedContainerService.HintSize="839,1199" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Retention - True" sap:VirtualizedContainerService.HintSize="839,1298" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -296,7 +296,7 @@
                     <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                   </Assign.Value>
                 </Assign>
-                <If Condition="[out_ValidationWithholdings]" sap:VirtualizedContainerService.HintSize="797,551" sap2010:WorkflowViewState.IdRef="If_5">
+                <If Condition="[out_ValidationWithholdings]" sap:VirtualizedContainerService.HintSize="797,650" sap2010:WorkflowViewState.IdRef="If_5">
                   <If.Then>
                     <Sequence sap:VirtualizedContainerService.HintSize="376,265" sap2010:WorkflowViewState.IdRef="Sequence_12">
                       <sap:WorkflowViewStateService.ViewState>
@@ -309,12 +309,13 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,403" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,502" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;Error al agregar la retencion&quot;]" />
                       <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:String[]">[Array_Datos]</OutArgument>
