@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>888,2517</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,2437</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadXML_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -122,7 +122,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
             <ui:UiElementExists DisplayName="Element Exists 'I'" Exists="[ExistIcon]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e93566cc-529c-43a2-b511-ccb08aabf755" InformativeScreenshot="ee908ba676346271474331a2bac17361" Selector="&lt;webctrl aria-role='grid' id='tbl-catalogo' tag='TABLE' /&gt;&lt;webctrl css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td' tableCol='2' tag='TD' /&gt;" TimeoutMS="3000">
@@ -161,7 +161,7 @@
                 <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;No hay factura&quot;]" />
               </If.Else>
             </If>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
             <ui:UiElementExists DisplayName="Element Exists 'firefox.exe  Abriendo'" Exists="[ExistDownload]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ff208c85-3863-4a2b-becd-2315583dea34" InformativeScreenshot="e137e10e19f15a9cab7b5ac4fb8781c7" Selector="&lt;wnd app='firefox.exe' cls='MozillaDialogClass' title='Abriendo *' /&gt;&lt;wnd cls='MozillaCompositorWindowClass' /&gt;" TimeoutMS="3000">

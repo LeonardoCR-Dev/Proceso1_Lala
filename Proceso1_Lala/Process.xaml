@@ -72,7 +72,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="376,1155" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="376,1060" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[in_TransactionItem]" Name="Id" />
       <Variable x:TypeArguments="x:String" Name="XML_Import" />
@@ -129,39 +129,17 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtractDataXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XML\ExtractDataXML.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Date" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Text" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Iva" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_IvaNumber" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Folio" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Retencion" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">
-          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Retencion" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FileXML" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_NameEmisor" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Total">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Total" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XML_Import" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">[XML_Date]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">[XML_Text]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">[XML_Iva]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">[XML_IvaNumber]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">[XML_Folio]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">[XML_Retencion]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">[Retencion]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">[FileXML]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">[XML_NameEmisor]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Total">[XML_Total]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">[XML_Import]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get_Info workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SAP\Get_Info.xaml">
@@ -174,23 +152,55 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validation workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Common\Validation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validation" />
-        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ValidationWithholdings" />
-        <InArgument x:TypeArguments="x:String" x:Key="SAP_Fecha">[SAP_Date]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="SAP_Texto">[SAP_Text]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="SAP_Importe">[SAP_Import]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="SAP_Referencia">[SAP_Reference]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="XML_ImporteTotal">[XML_Import]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="XML_Fecha">[XML_Date]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="XML_NombreEmisor">[XML_NameEmisor]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="XML_Texto">[XML_Text]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="XML_IvaPorcentaje">[XML_Iva]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="XML_Iva">[XML_IvaNumber]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="XML_FolioFactura">[XML_Folio]</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="XML_TieneRetencion">[Retencion]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="XML_Retencion">[XML_Retencion]</InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validation">
+          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_Validation" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ValidationWithholdings">
+          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_ValidationWithholdings" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Fecha">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAP_Date" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Texto">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAP_Text" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Importe">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAP_Import" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Referencia">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAP_Reference" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_ImporteTotal">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Import" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_Fecha">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Date" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_NombreEmisor">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_NameEmisor" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_Texto">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Text" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_IvaPorcentaje">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Iva" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_Iva">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_IvaNumber" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_FolioFactura">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Folio" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_XML_TieneRetencion">
+          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Retencion" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_Retencion">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Retencion" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_XML_Total">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Total" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Deve de regresar a la lista de preliminares" />
   </Sequence>
 </Activity>

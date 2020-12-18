@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>774,2050</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,1369</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtaerDatosXML_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -342,7 +342,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch DisplayName="Try Importe Total" sap:VirtualizedContainerService.HintSize="438,692" sap2010:WorkflowViewState.IdRef="TryCatch_27">
+    <TryCatch DisplayName="Try Importe Total" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="TryCatch_27">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -462,7 +462,7 @@
               <InArgument x:TypeArguments="x:String">[XMLDocument.Element("cfdi_Comprobante").Element("cfdi_Impuestos").Element("cfdi_Traslados").Element("cfdi_Traslado").Attribute("TasaOCuota").Value]</InArgument>
             </Assign.Value>
           </Assign>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_28" Text="[&quot;Iva &quot; + out_Iva]" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_28" Text="[&quot;Tasa &quot; + out_IvaPorcentaje]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
