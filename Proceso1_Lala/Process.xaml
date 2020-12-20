@@ -94,6 +94,7 @@
       <Variable x:TypeArguments="x:String" Name="SAP_Moneda" />
       <Variable x:TypeArguments="x:String" Name="SAP_NoDoc" />
       <Variable x:TypeArguments="x:String" Name="XML_Total" />
+      <Variable x:TypeArguments="x:Boolean" Name="Exist_Factura" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -123,8 +124,15 @@
     </ui:GetValue>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Intranet\Search_UUID.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_NameXML">[FileXML]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_UUID">[XML_UUID]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_NameXML">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="FileXML" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_UUID">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_UUID" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validation">
+          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Exist_Factura" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtractDataXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XML\ExtractDataXML.xaml">
