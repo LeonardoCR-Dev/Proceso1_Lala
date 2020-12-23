@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1729,1960</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,2106</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -72,7 +72,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1739,1855" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1739,2001" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[in_TransactionItem]" Name="Id" />
       <Variable x:TypeArguments="x:String" Name="XML_Import" />
@@ -97,6 +97,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="Exist_Factura" />
       <Variable x:TypeArguments="s:String[]" Name="Array_Data" />
       <Variable x:TypeArguments="x:Boolean" Name="Ocupado" />
+      <Variable x:TypeArguments="x:String" Name="No_Doc" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -110,12 +111,12 @@
         <InArgument x:TypeArguments="x:String" x:Key="Id">[Id]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If Condition="[Ocupado]" sap:VirtualizedContainerService.HintSize="1697,1539" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[Ocupado]" sap:VirtualizedContainerService.HintSize="1697,1685" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;La factura esta ocupada&quot;]" />
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="1318,1391" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="1318,1537" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -123,6 +124,21 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'CTextField Texto'" sap:VirtualizedContainerService.HintSize="1276,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+            <ui:GetValue.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="251bdee3-0fd0-451e-b783-8501973c6f8a" InformativeScreenshot="ae3a2eeea4f679f80e91bb8902931df7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/txtINVFO-BELNR' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetValue.Target>
+            <ui:GetValue.Value>
+              <OutArgument x:TypeArguments="x:String">[No_Doc]</OutArgument>
+            </ui:GetValue.Value>
+          </ui:GetValue>
+          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'CTextField Texto'" sap:VirtualizedContainerService.HintSize="1276,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
             <ui:GetValue.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="251bdee3-0fd0-451e-b783-8501973c6f8a" InformativeScreenshot="ae3a2eeea4f679f80e91bb8902931df7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/ctxtINVFO-SGTXT' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -226,6 +242,9 @@
                     <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ValidationRetentions">
                       <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_ValidationWithholdings" />
                     </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="No_Doc">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="No_Doc" />
+                    </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <If Condition="[out_Validation = false or out_ValidationWithholdings = true]" sap:VirtualizedContainerService.HintSize="813,305" sap2010:WorkflowViewState.IdRef="If_3">
@@ -250,7 +269,7 @@
                     <OutArgument x:TypeArguments="s:String[]">[Array_Data]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="s:String[]">[{XML_UUID,DateTime.Now.ToString,"-No hay factura descargable"}]</InArgument>
+                    <InArgument x:TypeArguments="s:String[]">[{No_Doc,XML_UUID,DateTime.Now.ToString,"-No hay factura descargable"}]</InArgument>
                   </Assign.Value>
                 </Assign>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
@@ -269,11 +288,14 @@
                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">
                       <Literal x:TypeArguments="x:Boolean" />
                     </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">
+                      <Literal x:TypeArguments="x:Boolean" />
+                    </InArgument>
                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">
                       <Literal x:TypeArguments="x:Boolean" Value="True" />
                     </InArgument>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">
-                      <Literal x:TypeArguments="x:Boolean" />
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion_Error">
+                      <Literal x:TypeArguments="x:Boolean" Value="True" />
                     </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
