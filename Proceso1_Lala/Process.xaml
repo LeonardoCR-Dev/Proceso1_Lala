@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1729,1920</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,1960</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -176,38 +176,70 @@
                     <OutArgument x:TypeArguments="x:String" x:Key="out_Reference">[SAP_Reference]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validation workflow" sap:VirtualizedContainerService.HintSize="813,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Common\Validation.xaml">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validacion workflow" sap:VirtualizedContainerService.HintSize="813,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Common\Validacion.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validation">[out_Validation]</OutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Fecha">[SAP_Date]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Texto">[SAP_Text]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Importe">[SAP_Import]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Referencia">[SAP_Reference]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_ImporteTotal">[XML_Import]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Fecha">[XML_Date]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_NombreEmisor">[XML_NameEmisor]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Texto">[XML_Text]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_IvaPorcentaje">[XML_Iva]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Iva">[XML_IvaNumber]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_FolioFactura">[XML_Folio]</InArgument>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_XML_TieneRetencion">[Retencion]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Retencion">[XML_Retencion]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Total">[XML_Total]</InArgument>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ValidationRetentions">[out_ValidationWithholdings]</OutArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validation">
+                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_Validation" />
+                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Fecha">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAP_Date" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Texto">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAP_Text" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Importe">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAP_Import" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Referencia">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAP_Reference" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_ImporteTotal">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Import" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Fecha">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Date" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_NombreEmisor">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_NameEmisor" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Texto">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Text" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_IvaPorcentaje">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Iva" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Iva">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_IvaNumber" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_FolioFactura">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Folio" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_XML_TieneRetencion">
+                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Retencion" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Retencion">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Retencion" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_XML_Total">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XML_Total" />
+                    </InArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ValidationRetentions">
+                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_ValidationWithholdings" />
+                    </OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <If Condition="[out_Validation or out_ValidationWithholdings]" sap:VirtualizedContainerService.HintSize="813,305" sap2010:WorkflowViewState.IdRef="If_3">
+                <If Condition="[out_Validation = false or out_ValidationWithholdings = true]" sap:VirtualizedContainerService.HintSize="813,305" sap2010:WorkflowViewState.IdRef="If_3">
                   <If.Then>
-                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Input\Invalidas\&quot;+XML_UUID+&quot;.XML&quot;)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[FileXML]" />
+                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Output\Invalidas\&quot;+XML_UUID+&quot;.XML&quot;)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[FileXML]" />
                   </If.Then>
                   <If.Else>
-                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Input\Validas\&quot;+XML_UUID+&quot;.XML&quot;)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[FileXML]" />
+                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Output\Validas\&quot;+XML_UUID+&quot;.XML&quot;)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[FileXML]" />
                   </If.Else>
                 </If>
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,403" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,555" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -232,6 +264,19 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
                 <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;No hay factura - Sal a fbv0&quot;]" />
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_Salir_factura workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Tests\SAP_Salir_factura.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">
+                      <Literal x:TypeArguments="x:Boolean" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">
+                      <Literal x:TypeArguments="x:Boolean" Value="True" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">
+                      <Literal x:TypeArguments="x:Boolean" />
+                    </InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
               </Sequence>
             </If.Else>
           </If>
