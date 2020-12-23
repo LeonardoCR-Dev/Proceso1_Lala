@@ -57,7 +57,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,1886</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1097,1886</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Validacion_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -148,6 +148,7 @@
         <av:PointCollection x:Key="ConnectorLocation">680,77.5 680,106</av:PointCollection>
         <x:Double x:Key="Width">1072.7842530514017</x:Double>
         <x:Double x:Key="Height">1784.7237980631485</x:Double>
+        <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -161,20 +162,20 @@
           <av:PointCollection x:Key="ConnectorLocation">680,262 680,316.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Iva e Indicador" sap:VirtualizedContainerService.HintSize="642,2707" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence DisplayName="Iva e Indicador" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'saplogon.exe Tratar'" sap:VirtualizedContainerService.HintSize="600,1837" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="484a8425e0139b6b709fe26726db954e" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;">
+        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'saplogon.exe Tratar'" sap:VirtualizedContainerService.HintSize="640,2931" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="484a8425e0139b6b709fe26726db954e" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;">
           <ui:WindowScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="566,1691" sap2010:WorkflowViewState.IdRef="Sequence_43">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="606,2745" sap2010:WorkflowViewState.IdRef="Sequence_43">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="DocRegistrado" />
                 </Sequence.Variables>
@@ -184,7 +185,7 @@
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'CheckBox  Calc.impuestos'" sap:VirtualizedContainerService.HintSize="524,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'CheckBox  Calc.impuestos'" sap:VirtualizedContainerService.HintSize="564,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition OffsetX="6" OffsetY="13" Position="TopLeft" />
                   </ui:Click.CursorPosition>
@@ -204,11 +205,11 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:Click>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,293" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
@@ -227,10 +228,7 @@
                           <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
                         </ui:ClickText.CursorPosition>
                         <ui:ClickText.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd835e18-dc84-420d-a2ea-bd06f0d6313f" InformativeScreenshot="ececcc39d4464c60e2b919d557d3e144" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.1900000158 1001 2020' /&gt;&lt;sap id='sbar' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd835e18-dc84-420d-a2ea-bd06f0d6313f" InformativeScreenshot="ececcc39d4464c60e2b919d557d3e144" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='sbar' /&gt;" TimeoutMS="1500">
                             <ui:Target.WaitForReady>
                               <InArgument x:TypeArguments="ui:WaitForReady" />
                             </ui:Target.WaitForReady>
@@ -244,10 +242,7 @@
                       </ui:ClickText>
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'P'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8910679a-6b22-4c81-880b-a79b7a19298f" InformativeScreenshot="c3cd83c4d83695e914b7d44d815e77b9" Selector="&lt;html app='saplogon.exe' title='F5117' /&gt;&lt;webctrl idx='1' tag='P' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8910679a-6b22-4c81-880b-a79b7a19298f" InformativeScreenshot="c3cd83c4d83695e914b7d44d815e77b9" Selector="&lt;html app='saplogon.exe' title='F5117' /&gt;&lt;webctrl idx='1' tag='P' /&gt;" TimeoutMS="1500">
                             <ui:Target.WaitForReady>
                               <InArgument x:TypeArguments="ui:WaitForReady" />
                             </ui:Target.WaitForReady>
@@ -274,10 +269,7 @@
                           </ui:CursorPosition>
                         </ui:Click.CursorPosition>
                         <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bf01c323-9aa8-4727-8e83-9c5c5725eef3" InformativeScreenshot="937c042c41660b622798e9d7782271b5" Selector="&lt;wnd app='saplogon.exe' cls='DialogBox Container Class' title='Performance Assistant' /&gt;&lt;ctrl idx='1' name='Cerrar' role='push button' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bf01c323-9aa8-4727-8e83-9c5c5725eef3" InformativeScreenshot="937c042c41660b622798e9d7782271b5" Selector="&lt;wnd app='saplogon.exe' cls='DialogBox Container Class' title='Performance Assistant' /&gt;&lt;ctrl idx='1' name='Cerrar' role='push button' /&gt;" TimeoutMS="1500">
                             <ui:Target.WaitForReady>
                               <InArgument x:TypeArguments="ui:WaitForReady" />
                             </ui:Target.WaitForReady>
@@ -289,14 +281,14 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:Click>
-                      <If Condition="[ErrorDocReg.Contains(&quot;F5117&quot;)]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_11">
+                      <If Condition="[ErrorDocReg.Contains(&quot;F5117&quot;)]" sap:VirtualizedContainerService.HintSize="484,301" sap2010:WorkflowViewState.IdRef="If_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'CTextField Cuenta'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SpecialKey="True">
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'CTextField Cuenta'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SpecialKey="True">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b5beafe-55ab-4405-860a-60a489167653" InformativeScreenshot="8a661248f974707f0779806b43e60024" Selector="&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/ctxtINVFO-ACCNT' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -307,6 +299,11 @@
                                 </ui:Target.WaitForReady>
                               </ui:Target>
                             </ui:SendHotkey.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                           </ui:SendHotkey>
                         </If.Then>
                       </If>
@@ -328,11 +325,11 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <If Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.16&quot;)]" DisplayName="If IVA -16%" sap:VirtualizedContainerService.HintSize="524,213" sap2010:WorkflowViewState.IdRef="If_5">
+                <If Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.16&quot;)]" DisplayName="If IVA -16%" sap:VirtualizedContainerService.HintSize="564,51" sap2010:WorkflowViewState.IdRef="If_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
@@ -379,7 +376,7 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If sap2010:Annotation.AnnotationText="Valid is kept 0% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.00&quot;)]" DisplayName="If- IVA - 0%" sap:VirtualizedContainerService.HintSize="524,82" sap2010:WorkflowViewState.IdRef="If_6">
+                <If sap2010:Annotation.AnnotationText="Valid is kept 0% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.00&quot;)]" DisplayName="If- IVA - 0%" sap:VirtualizedContainerService.HintSize="564,82" sap2010:WorkflowViewState.IdRef="If_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -402,7 +399,7 @@
                     </ui:TypeInto>
                   </If.Then>
                 </If>
-                <If sap2010:Annotation.AnnotationText="Valid is kept 8% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.08&quot;)]" DisplayName="If- IVA - 8%" sap:VirtualizedContainerService.HintSize="524,82" sap2010:WorkflowViewState.IdRef="If_7">
+                <If sap2010:Annotation.AnnotationText="Valid is kept 8% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.08&quot;)]" DisplayName="If- IVA - 8%" sap:VirtualizedContainerService.HintSize="564,82" sap2010:WorkflowViewState.IdRef="If_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -425,7 +422,7 @@
                     </ui:TypeInto>
                   </If.Then>
                 </If>
-                <If sap2010:Annotation.AnnotationText="Valid is kept 11% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.11&quot;)]" DisplayName="If - IVA - 11%" sap:VirtualizedContainerService.HintSize="524,82" sap2010:WorkflowViewState.IdRef="If_8">
+                <If sap2010:Annotation.AnnotationText="Valid is kept 11% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.11&quot;)]" DisplayName="If - IVA - 11%" sap:VirtualizedContainerService.HintSize="564,82" sap2010:WorkflowViewState.IdRef="If_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -448,7 +445,7 @@
                     </ui:TypeInto>
                   </If.Then>
                 </If>
-                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'ComboBox  Indicador IVA'" sap:VirtualizedContainerService.HintSize="524,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'ComboBox  Indicador IVA'" sap:VirtualizedContainerService.HintSize="564,51" sap2010:WorkflowViewState.IdRef="GetValue_1">
                   <ui:GetValue.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f6751743-d689-4ed4-aab8-a18512e8cdfb" InformativeScreenshot="485e8d1e360ce462c6607698d6fb39b2" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/cmbINVFO-MWSKZ' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -463,7 +460,7 @@
                     <OutArgument x:TypeArguments="x:String">[TypeTax]</OutArgument>
                   </ui:GetValue.Value>
                 </ui:GetValue>
-                <Assign sap:VirtualizedContainerService.HintSize="524,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign sap:VirtualizedContainerService.HintSize="564,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[TypeTax]</OutArgument>
                   </Assign.To>
@@ -471,7 +468,7 @@
                     <InArgument x:TypeArguments="x:String">[TypeTax.Substring(0,2)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'TableControl 2'" FormattedText="False" sap:VirtualizedContainerService.HintSize="524,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
+                <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'TableControl 2'" FormattedText="False" sap:VirtualizedContainerService.HintSize="564,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
                   <ui:GetVisibleText.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c449dd00-aee6-454f-aea2-39754b736073" InformativeScreenshot="906726a6d0d8cfa6a62c97a626d8735b" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/subITEMS:SAPLFSKB:0100/tblSAPLFSKBTABLE' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -485,8 +482,13 @@
                   <ui:GetVisibleText.Text>
                     <OutArgument x:TypeArguments="x:String">[posiciones]</OutArgument>
                   </ui:GetVisibleText.Text>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:GetVisibleText>
-                <Assign sap:VirtualizedContainerService.HintSize="524,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign sap:VirtualizedContainerService.HintSize="564,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[posiciones]</OutArgument>
                   </Assign.To>
@@ -494,7 +496,7 @@
                     <InArgument x:TypeArguments="x:String">[posiciones.Substring(0,posiciones.IndexOf("Posiciones"))]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="524,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                <Assign sap:VirtualizedContainerService.HintSize="564,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[posiciones]</OutArgument>
                   </Assign.To>
@@ -502,7 +504,7 @@
                     <InArgument x:TypeArguments="x:String">[posiciones.Trim()]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="524,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign sap:VirtualizedContainerService.HintSize="564,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[posicionesActual]</OutArgument>
                   </Assign.To>
@@ -510,18 +512,20 @@
                     <InArgument x:TypeArguments="x:String">[posiciones]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="524,51" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="564,1080" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                   <ui:InterruptibleWhile.Body>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,426" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,875" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="Selector" />
+                        <Variable x:TypeArguments="x:Boolean" Name="AdvertenciaIva" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[Selector]</OutArgument>
                         </Assign.To>
@@ -529,7 +533,7 @@
                           <InArgument x:TypeArguments="x:String">[(Convert.ToInt32(posiciones)-Convert.ToInt32(posicionesActual)).ToString]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Ind.impuest...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[TypeTax]">
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Ind.impuest...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[TypeTax+ &quot;[k(enter)]&quot;]">
                         <ui:TypeInto.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d53bc428-4498-43bb-9e62-efb12b93fc1f" InformativeScreenshot="5bb01fe100aa120c2385c438df850f8d" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap colTooltip='Indicador impuestos' id='usr/subITEMS:SAPLFSKB:0100/tblSAPLFSKBTABLE' tableRow='{{Selector}}' /&gt;">
                             <ui:Target.TimeoutMS>
@@ -540,8 +544,54 @@
                             </ui:Target.WaitForReady>
                           </ui:Target>
                         </ui:TypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </ui:TypeInto>
-                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                      <ui:UiElementExists DisplayName="Element Exists 'CTextField  Ind.impuest...'" Exists="[AdvertenciaIva]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a3c52018-146b-49be-ad30-8c4eaf445396" InformativeScreenshot="c6c665dae70f6dd68c2853b682e0cffe" Selector="&lt;sap id='sbar' /&gt;" TimeoutMS="1500">
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:UiElementExists>
+                      <If Condition="[AdvertenciaIva]" sap:VirtualizedContainerService.HintSize="484,263" sap2010:WorkflowViewState.IdRef="If_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="enter" KeyModifiers="None" SpecialKey="True">
+                            <ui:SendHotkey.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1db77fb1-da80-4df0-871a-e7ac6e4be29b">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SendHotkey.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:SendHotkey>
+                        </If.Then>
+                      </If>
+                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[posicionesActual]</OutArgument>
                         </Assign.To>
@@ -556,14 +606,19 @@
                   </ui:InterruptibleWhile.Condition>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InterruptibleWhile>
               </Sequence>
             </ActivityAction>
           </ui:WindowScope.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:WindowScope>
       </Sequence>
       <FlowStep.Next>
@@ -584,36 +639,112 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">433.5,416.5</av:Point>
                   <av:Size x:Key="ShapeSize">92,87</av:Size>
-                  <av:PointCollection x:Key="TrueConnector">433.5,460 250,460 250,494</av:PointCollection>
+                  <av:PointCollection x:Key="TrueConnector">433.5,460 250,460 250,487</av:PointCollection>
                   <av:PointCollection x:Key="FalseConnector">526.5,460 680,460 680,496</av:PointCollection>
                   <x:String x:Key="TrueLabel">Si tiene retencion</x:String>
                   <x:String x:Key="FalseLabel">Si no tiene retencion</x:String>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <FlowDecision.True>
-                <FlowStep x:Name="__ReferenceID11">
+                <FlowStep x:Name="__ReferenceID18">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">150,494</av:Point>
-                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">250,545 250,596.5</av:PointCollection>
+                      <av:Point x:Key="ShapeLocation">150,487</av:Point>
+                      <av:Size x:Key="ShapeSize">200,66</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">250,553 250,596.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add_Retentions" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAP\Add_Retentions.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_SubTotal">[in_XML_Total]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Iva">[in_XML_Iva]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Folio">[in_XML_FolioFactura]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Tasa">[in_XML_IvaPorcentaje]</InArgument>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[out_ValidationRetentions]</OutArgument>
-                      <OutArgument x:TypeArguments="x:String" x:Key="out_Type_Error">[Failure_Validation_WithHoldings]</OutArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
+                  <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_46">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:InvokeWorkflowFile>
+                    <If Condition="[Convert.ToInt32(posiciones) &gt; 1]" sap:VirtualizedContainerService.HintSize="755,765" sap2010:WorkflowViewState.IdRef="If_13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,617" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[&quot;Son mas de 2 posiciones en la retencion&quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:MessageBox>
+                          <Assign DisplayName="Assign Arrat_Datos" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:String[]">[Array_Datos]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,"Mas de una posicion con retencion"}]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="s:String[]" x:Key="in_Data">[Array_Datos]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_Salir_factura workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Tests\SAP_Salir_factura.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">
+                                <Literal x:TypeArguments="x:Boolean" Value="True" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">
+                                <Literal x:TypeArguments="x:Boolean" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">
+                                <Literal x:TypeArguments="x:Boolean" Value="True" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion_Error">
+                                <Literal x:TypeArguments="x:Boolean" Value="True" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_Posicion">
+                                <Literal x:TypeArguments="x:Boolean" Value="True" />
+                              </InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                          <Throw Exception="[New BusinessRuleException(&quot;No cumple con las especificaciones&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add_Retentions" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="SAP\Add_Retentions.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_SubTotal">[in_XML_ImporteTotal]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_Iva">[in_XML_Iva]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_Folio">[in_XML_FolioFactura]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_Tasa">[in_XML_IvaPorcentaje]</InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[out_ValidationRetentions]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_Type_Error">[Failure_Validation_WithHoldings]</OutArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InvokeWorkflowFile>
+                      </If.Else>
+                    </If>
+                  </Sequence>
                   <FlowStep.Next>
                     <FlowDecision x:Name="__ReferenceID10" Condition="[out_ValidationRetentions]" DisplayName="Fallo la contabilizacion" sap:VirtualizedContainerService.HintSize="126,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                       <sap:WorkflowViewStateService.ViewState>
@@ -662,7 +793,7 @@
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
@@ -1007,15 +1138,15 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
-                                <FlowStep x:Name="__ReferenceID12">
+                                <FlowStep x:Name="__ReferenceID11">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">600,967</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,68</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">700,1035 700,1065 700.5,1065 700.5,1106.5</av:PointCollection>
+                                      <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">700,1033 700,1063 700.5,1063 700.5,1106.5</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Clic en simular" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                  <Sequence DisplayName="Clic en simular" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1057,11 +1188,11 @@
                                     </ui:UiElementExists>
                                   </Sequence>
                                   <FlowStep.Next>
-                                    <FlowDecision x:Name="__ReferenceID13" Condition="[Warning]" DisplayName="Error visible?" sap:VirtualizedContainerService.HintSize="73,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                                    <FlowDecision x:Name="__ReferenceID12" Condition="[Warning]" DisplayName="Error visible?" sap:VirtualizedContainerService.HintSize="72,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">664,1106.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">73,87</av:Size>
+                                          <av:Size x:Key="ShapeSize">72,87</av:Size>
                                           <av:PointCollection x:Key="TrueConnector">664,1150 440,1150 440,1236</av:PointCollection>
                                           <av:PointCollection x:Key="FalseConnector">736,1150 920,1150 920,1237</av:PointCollection>
                                           <x:String x:Key="TrueLabel">Error visible</x:String>
@@ -1069,15 +1200,15 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <FlowDecision.True>
-                                        <FlowStep x:Name="__ReferenceID16">
+                                        <FlowStep x:Name="__ReferenceID15">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">340,1236</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,68</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">440,1304 440,1334 442,1334 442,1356.5</av:PointCollection>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">440,1302 440,1356.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Clic en ver detalles" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                          <Sequence DisplayName="Clic en ver detalles" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1125,33 +1256,33 @@
                                             </ui:GetValue>
                                           </Sequence>
                                           <FlowStep.Next>
-                                            <FlowDecision x:Name="__ReferenceID17" Condition="[Mensaje.Contains(&quot;F5061&quot;)]" DisplayName="El error es F5061?" sap:VirtualizedContainerService.HintSize="99,87" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
+                                            <FlowDecision x:Name="__ReferenceID16" Condition="[Mensaje.Contains(&quot;F5061&quot;)]" DisplayName="El error es F5061?" sap:VirtualizedContainerService.HintSize="95,87" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">392.5,1356.5</av:Point>
-                                                  <av:Size x:Key="ShapeSize">99,87</av:Size>
+                                                  <av:Size x:Key="ShapeSize">95,87</av:Size>
                                                   <av:PointCollection x:Key="TrueConnector">392.5,1400 240,1400 240,1516</av:PointCollection>
-                                                  <av:PointCollection x:Key="FalseConnector">491.5,1400 650,1400 650,1526</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">487.5,1400 650,1400 650,1526</av:PointCollection>
                                                   <x:String x:Key="TrueLabel">Error F5061</x:String>
                                                   <x:String x:Key="FalseLabel">Error diferente a F5061</x:String>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <FlowDecision.True>
-                                                <FlowStep x:Name="__ReferenceID14">
+                                                <FlowStep x:Name="__ReferenceID13">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">140,1516</av:Point>
-                                                      <av:Size x:Key="ShapeSize">200,68</av:Size>
+                                                      <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Agregar incidentes a excel y salir de la factura" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                  <Sequence DisplayName="Agregar incidentes a excel y salir de la factura" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Cerrar'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Cerrar'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                       <ui:Click.CursorPosition>
                                                         <ui:CursorPosition Position="Center">
                                                           <ui:CursorPosition.OffsetX>
@@ -1194,7 +1325,7 @@
                                                         <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
                                                       </Assign.Value>
                                                     </Assign>
-                                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
+                                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
                                                         <InArgument x:TypeArguments="s:String[]" x:Key="in_Data">[Array_Datos]</InArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
@@ -1206,31 +1337,47 @@
                                                     </ui:InvokeWorkflowFile>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_Salir_factura workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Tests\SAP_Salir_factura.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">True</InArgument>
-                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">False</InArgument>
-                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">True</InArgument>
-                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion_Error">False</InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">
+                                                          <Literal x:TypeArguments="x:Boolean" Value="True" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">
+                                                          <Literal x:TypeArguments="x:Boolean" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">
+                                                          <Literal x:TypeArguments="x:Boolean" Value="True" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion_Error">
+                                                          <Literal x:TypeArguments="x:Boolean" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Posicion">
+                                                          <Literal x:TypeArguments="x:Boolean" />
+                                                        </InArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
                                                     </ui:InvokeWorkflowFile>
                                                   </Sequence>
                                                 </FlowStep>
                                               </FlowDecision.True>
                                               <FlowDecision.False>
-                                                <FlowStep x:Name="__ReferenceID18">
+                                                <FlowStep x:Name="__ReferenceID17">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">550,1526</av:Point>
-                                                      <av:Size x:Key="ShapeSize">200,68</av:Size>
+                                                      <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Agregar incidentes a excel y salir de la factura" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                                  <Sequence DisplayName="Agregar incidentes a excel y salir de la factura" sap:VirtualizedContainerService.HintSize="376,869" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Cerrar'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_25" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Cerrar'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_25" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                       <ui:Click.CursorPosition>
                                                         <ui:CursorPosition Position="Center">
                                                           <ui:CursorPosition.OffsetX>
@@ -1273,7 +1420,7 @@
                                                         <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
                                                       </Assign.Value>
                                                     </Assign>
-                                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
+                                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
                                                         <InArgument x:TypeArguments="s:String[]" x:Key="in_Data">[Array_Datos]</InArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
@@ -1310,11 +1457,27 @@
                                                     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="LOS DATOS NO COINCIDEN - Salir a lista preeliminares" />
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_Salir_factura workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Tests\SAP_Salir_factura.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">True</InArgument>
-                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">False</InArgument>
-                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">True</InArgument>
-                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion_Error">False</InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">
+                                                          <Literal x:TypeArguments="x:Boolean" Value="True" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">
+                                                          <Literal x:TypeArguments="x:Boolean" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">
+                                                          <Literal x:TypeArguments="x:Boolean" Value="True" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion_Error">
+                                                          <Literal x:TypeArguments="x:Boolean" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Posicion">
+                                                          <Literal x:TypeArguments="x:Boolean" />
+                                                        </InArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
                                                     </ui:InvokeWorkflowFile>
                                                     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_10">
                                                       <ui:CommentOut.Body>
@@ -1395,14 +1558,14 @@
                                         </FlowStep>
                                       </FlowDecision.True>
                                       <FlowDecision.False>
-                                        <FlowStep x:Name="__ReferenceID15">
+                                        <FlowStep x:Name="__ReferenceID14">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">820,1237</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,68</av:Size>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Contabilizar" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                          <Sequence DisplayName="Contabilizar" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1649,7 +1812,7 @@
                     <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="s:String[]" x:Key="in_Data">[Array_Datos]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
@@ -1662,13 +1825,29 @@
                 <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="LOS DATOS NO COINCIDEN - Salir a lista preeliminares" />
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_Salir_factura workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Tests\SAP_Salir_factura.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">True</InArgument>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">False</InArgument>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">False</InArgument>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion_Error">True</InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Intranet">
+                      <Literal x:TypeArguments="x:Boolean" Value="True" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Retencion">
+                      <Literal x:TypeArguments="x:Boolean" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion">
+                      <Literal x:TypeArguments="x:Boolean" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Validacion_Error">
+                      <Literal x:TypeArguments="x:Boolean" Value="True" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Posicion">
+                      <Literal x:TypeArguments="x:Boolean" />
+                    </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Finalizar'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Finalizar'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -1695,7 +1874,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:Click>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Sí'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Sí'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -1899,6 +2078,41 @@
     <x:Reference>__ReferenceID8</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
     <x:Reference>__ReferenceID10</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">90,194.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add_Retentions" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAP\Add_Retentions.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SubTotal">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_XML_ImporteTotal" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Iva">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_XML_Iva" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Folio">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_XML_FolioFactura" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Tasa">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_XML_IvaPorcentaje" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">
+            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_ValidationRetentions" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_Type_Error">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Failure_Validation_WithHoldings" />
+          </OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+    </FlowStep>
     <x:Reference>__ReferenceID11</x:Reference>
     <x:Reference>__ReferenceID12</x:Reference>
     <x:Reference>__ReferenceID13</x:Reference>
