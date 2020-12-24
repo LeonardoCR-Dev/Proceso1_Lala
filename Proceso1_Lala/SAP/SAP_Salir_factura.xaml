@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1043,855</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,853</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_Salir_factura_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -70,7 +70,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="SAP_Salir_factura" sap:VirtualizedContainerService.HintSize="1024,790" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="SAP_Salir_factura" sap:VirtualizedContainerService.HintSize="1024,788" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -78,7 +78,7 @@
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">90,40 221,40 221,116.5</av:PointCollection>
         <x:Double x:Key="Width">990.5</x:Double>
-        <x:Double x:Key="Height">754</x:Double>
+        <x:Double x:Key="Height">752</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -1054,25 +1054,25 @@
                   <av:Size x:Key="ShapeSize">200,66</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Escribir &quot;Saldo diferente de 0.00&quot;" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_30">
+              <Sequence DisplayName="Escribir &quot;Saldo diferente de 0.00&quot;" sap:VirtualizedContainerService.HintSize="1144,1618" sap2010:WorkflowViewState.IdRef="Sequence_30">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'saplogon.exe Tratar'" sap:VirtualizedContainerService.HintSize="1102,1818" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="b143aed39c68d98d9f96ec6502f7d757" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;">
+                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'saplogon.exe Tratar'" sap:VirtualizedContainerService.HintSize="1102,1526" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="b143aed39c68d98d9f96ec6502f7d757" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;">
                   <ui:WindowScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1068,1672" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1068,1380" sap2010:WorkflowViewState.IdRef="Sequence_29">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="1026,1580" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="1026,1288" sap2010:WorkflowViewState.IdRef="Sequence_28">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="exist_Warning" />
                           </Sequence.Variables>
@@ -1081,36 +1081,6 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab  Detalle'" sap:VirtualizedContainerService.HintSize="984,106" sap2010:WorkflowViewState.IdRef="Click_26" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                            <ui:Click.CursorPosition>
-                              <ui:CursorPosition OffsetX="56" OffsetY="13" Position="TopLeft" />
-                            </ui:Click.CursorPosition>
-                            <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a2476612-40d2-4735-aa62-42a97c308dac" InformativeScreenshot="518b6772da1d9cd562ece97f96ef9ee2" Selector="&lt;sap id='usr/tabsTS/tabpTAX' /&gt;">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:Click.Target>
-                          </ui:Click>
-                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab  Detalle'" sap:VirtualizedContainerService.HintSize="984,106" sap2010:WorkflowViewState.IdRef="Click_27" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                            <ui:Click.CursorPosition>
-                              <ui:CursorPosition OffsetX="43" OffsetY="14" Position="TopLeft" />
-                            </ui:Click.CursorPosition>
-                            <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a2476612-40d2-4735-aa62-42a97c308dac" InformativeScreenshot="06a294529009807e4b2a7d59dc3ddae8" Selector="&lt;sap id='usr/tabsTS/tabpWF' /&gt;">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:Click.Target>
-                          </ui:Click>
                           <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab  Detalle'" sap:VirtualizedContainerService.HintSize="984,106" sap2010:WorkflowViewState.IdRef="Click_22" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition OffsetX="35" OffsetY="20" Position="TopLeft" />
@@ -1159,7 +1129,7 @@
                                     </ui:Target>
                                   </ui:Click.Target>
                                 </ui:Click>
-                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Texto'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" SendWindowMessages="False" SimulateType="False" Text="Saldo diferente de 0.00">
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Texto'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" SendWindowMessages="False" SimulateType="False" Text="Saldo - Datos">
                                   <ui:TypeInto.Target>
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5ecd8f83-a932-4460-ac13-4416753ab60b" InformativeScreenshot="6c6815c83cfad5dad9266ba298b56b8f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMORE/ssubPAGE:SAPLFDCB:0050/txtINVFO-BKTXT' /&gt;">
                                       <ui:Target.TimeoutMS>
@@ -1223,7 +1193,7 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Texto'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" SendWindowMessages="False" SimulateType="False" Text="Saldo diferente de 0.00">
+                                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Texto'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" SendWindowMessages="False" SimulateType="False" Text="Saldo - Datos">
                                         <ui:TypeInto.Target>
                                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5ecd8f83-a932-4460-ac13-4416753ab60b" InformativeScreenshot="6c6815c83cfad5dad9266ba298b56b8f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMORE/ssubPAGE:SAPLFDCB:0050/txtINVFO-BKTXT' /&gt;">
                                             <ui:Target.TimeoutMS>
