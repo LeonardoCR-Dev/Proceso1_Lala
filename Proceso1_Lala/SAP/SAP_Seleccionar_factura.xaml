@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1287,2924</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1287,2978</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>selectfactura_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -93,7 +93,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="selectfactura" sap:VirtualizedContainerService.HintSize="1297,2859" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="selectfactura" sap:VirtualizedContainerService.HintSize="1297,2913" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="exist" />
       <Variable x:TypeArguments="x:String" Name="GridviewSapguiGridvi" />
@@ -150,38 +150,21 @@
         <InArgument x:TypeArguments="x:String">[Id]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1255,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_9">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'GridViewCell  1900000003'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
-            <ui:GetValue.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="785dcfce-c65b-428f-8ab7-986306065576" InformativeScreenshot="353fd042e603d483587858cf81c01e0d" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Contabilizar docs. preliminares: Lista' /&gt;&lt;sap colName='BELNR' id='usr/cntlGRID1/shellcont/shell' tableRow='{{ID_Buscar}}' /&gt;">
-                <ui:Target.TimeoutMS>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:Target.TimeoutMS>
-                <ui:Target.WaitForReady>
-                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                </ui:Target.WaitForReady>
-              </ui:Target>
-            </ui:GetValue.Target>
-            <ui:GetValue.Value>
-              <OutArgument x:TypeArguments="x:String">[GridviewSapguiGridvi]</OutArgument>
-            </ui:GetValue.Value>
-          </ui:GetValue>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'GridViewCell  1900000003'" sap:VirtualizedContainerService.HintSize="1255,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+      <ui:GetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="785dcfce-c65b-428f-8ab7-986306065576" InformativeScreenshot="353fd042e603d483587858cf81c01e0d" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Contabilizar docs. preliminares: Lista' /&gt;&lt;sap colName='BELNR' id='usr/cntlGRID1/shellcont/shell' tableRow='{{ID_Buscar}}' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:GetValue.Target>
+      <ui:GetValue.Value>
+        <OutArgument x:TypeArguments="x:String">[GridviewSapguiGridvi]</OutArgument>
+      </ui:GetValue.Value>
+    </ui:GetValue>
     <Assign sap:VirtualizedContainerService.HintSize="1255,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Busqueda]</OutArgument>
