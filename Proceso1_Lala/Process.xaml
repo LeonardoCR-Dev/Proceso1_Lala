@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1503,2298</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1503,2398</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -75,7 +75,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1513,2193" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1513,2293" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[in_TransactionItem]" Name="Id" />
       <Variable x:TypeArguments="x:String" Name="XML_Import" />
@@ -101,11 +101,7 @@
       <Variable x:TypeArguments="s:String[]" Name="Array_Data" />
       <Variable x:TypeArguments="x:Boolean" Name="Ocupado" />
       <Variable x:TypeArguments="x:String" Name="No_Doc" />
-      <Variable x:TypeArguments="x:String" Name="Fallas">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">0</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="0" Name="Fallas" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -113,6 +109,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="1471,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Fallas]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["0"]</InArgument>
+      </Assign.Value>
+    </Assign>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Select_Factura_SAP workflow" sap:VirtualizedContainerService.HintSize="1471,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP\SAP_Seleccionar_factura.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Ocupado">
@@ -124,7 +128,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="Transaccion">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionNumber" />
         </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Fallos">
+        <InArgument x:TypeArguments="x:String" x:Key="in_Fallos">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Fallas" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
