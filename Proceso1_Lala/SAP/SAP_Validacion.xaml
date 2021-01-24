@@ -16,8 +16,8 @@
     <x:Property Name="in_XML_Retencion" Type="InArgument(x:String)" />
     <x:Property Name="in_XML_Total" Type="InArgument(x:String)" />
     <x:Property Name="out_ValidationRetentions" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="No_Doc" Type="InArgument(x:String)" />
     <x:Property Name="in_Archivo" Type="InArgument(x:String)" />
+    <x:Property Name="in_No_Doc" Type="InArgument(x:String)" />
   </x:Members>
   <this:Validacion.in_SAP_Fecha>
     <InArgument x:TypeArguments="x:String" />
@@ -58,7 +58,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,1871</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1168,1902</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Validacion_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -130,7 +130,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="Validation" sap:VirtualizedContainerService.HintSize="1069,1806" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Se hace la validacion de los datos de SAP contra los datos del XML y se agregan retenciones en caso de que sean necesarias" DisplayName="Validation" sap:VirtualizedContainerService.HintSize="1069,1837" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="s:String[]" Name="Array_Datos" />
       <Variable x:TypeArguments="x:String" Name="Failure" />
@@ -153,6 +153,7 @@
         <x:Double x:Key="Width">1035</x:Double>
         <x:Double x:Key="Height">1770</x:Double>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -166,7 +167,7 @@
           <av:PointCollection x:Key="ConnectorLocation">680,262 680,316.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Iva e Indicador" sap:VirtualizedContainerService.HintSize="1140,7906" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence DisplayName="Iva e Indicador" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -212,7 +213,7 @@
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_Error workflow" sap:VirtualizedContainerService.HintSize="1022,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="SAP\SAP_Error.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="in_Archivo">[in_Archivo]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_No_Doc">[No_Doc]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_No_Doc">[in_No_Doc]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Texto">[in_SAP_Texto]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
@@ -979,7 +980,7 @@
                                     <OutArgument x:TypeArguments="s:String[]">[Array_Datos]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,"Mas de una posicion con retencion"}]</InArgument>
+                                    <InArgument x:TypeArguments="s:String[]">[{in_No_Doc,in_SAP_Texto,DateTime.Now.ToString,"Mas de una posicion con retencion"}]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
@@ -1077,7 +1078,7 @@
                                 <OutArgument x:TypeArguments="s:String[]">[Array_Datos]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
+                                <InArgument x:TypeArguments="s:String[]">[{in_No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
                               </Assign.Value>
                             </Assign>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
@@ -1572,10 +1573,10 @@
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">140,1516</av:Point>
                                                       <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">240,1582 240,1612 230,1612 230,1627</av:PointCollection>
+                                                      <av:PointCollection x:Key="ConnectorLocation">240,1582 240,1617</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Agregar incidentes a excel y salir de la factura" sap:VirtualizedContainerService.HintSize="376,1505" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                  <Sequence DisplayName="Agregar incidentes a excel y salir de la factura" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                     <Sequence.Variables>
                                                       <Variable x:TypeArguments="s:DateTime" Name="fechaActual" />
                                                       <Variable x:TypeArguments="s:DateTime" Name="Time" />
@@ -1734,7 +1735,7 @@
                                                               <OutArgument x:TypeArguments="s:String[]">[Array_Datos]</OutArgument>
                                                             </Assign.To>
                                                             <Assign.Value>
-                                                              <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
+                                                              <InArgument x:TypeArguments="s:String[]">[{in_No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
                                                             </Assign.Value>
                                                           </Assign>
                                                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
@@ -1775,7 +1776,7 @@
                                                     <FlowStep x:Name="__ReferenceID19">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <av:Point x:Key="ShapeLocation">130,1627</av:Point>
+                                                          <av:Point x:Key="ShapeLocation">140,1617</av:Point>
                                                           <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
@@ -2079,7 +2080,7 @@
                                                         <OutArgument x:TypeArguments="s:String[]">[Array_Datos]</OutArgument>
                                                       </Assign.To>
                                                       <Assign.Value>
-                                                        <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
+                                                        <InArgument x:TypeArguments="s:String[]">[{in_No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
                                                       </Assign.Value>
                                                     </Assign>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
@@ -2466,7 +2467,7 @@
                     <OutArgument x:TypeArguments="s:String[]">[Array_Datos]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="s:String[]">[{No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
+                    <InArgument x:TypeArguments="s:String[]">[{in_No_Doc,in_SAP_Texto,DateTime.Now.ToString,Failure}]</InArgument>
                   </Assign.Value>
                 </Assign>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
