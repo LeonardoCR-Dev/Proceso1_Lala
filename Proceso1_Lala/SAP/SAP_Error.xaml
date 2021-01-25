@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1168,1879</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1081,1889</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_Error_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -70,10 +70,9 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Verifica de que error se trata y si es el errro &quot;No ha registrado previamente ninguna autorización en división 2160&quot; sale de la factura y continua con la siguiente" DisplayName="SAP_Error" sap:VirtualizedContainerService.HintSize="834,1814" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Verifica de que error se trata y si es el errro &quot;No ha registrado previamente ninguna autorización en división 2160&quot; sale de la factura y continua con la siguiente" DisplayName="SAP_Error" sap:VirtualizedContainerService.HintSize="834,1824" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Mensaje" />
-      <Variable x:TypeArguments="ui:GenericValue" Name="TextoError" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -90,15 +89,18 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[Mensaje]" sap:VirtualizedContainerService.HintSize="792,1534" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[Mensaje]" DisplayName="Si existe mensaje con error" sap:VirtualizedContainerService.HintSize="792,1542" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
-        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Tratarfac Sap_front'" sap:VirtualizedContainerService.HintSize="647,1386" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="84b2f32078c09770c9bcb7236572d1bd" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;">
+        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Tratarfac Sap_front'" sap:VirtualizedContainerService.HintSize="647,1392" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="84b2f32078c09770c9bcb7236572d1bd" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;">
           <ui:WindowScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="613,1240" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="613,1246" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="ui:GenericValue" Name="TextoError" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -119,7 +121,7 @@
                     <OutArgument x:TypeArguments="ui:GenericValue">[TextoError]</OutArgument>
                   </ui:GetVisibleText.Text>
                 </ui:GetVisibleText>
-                <If Condition="[TextoError.Contains(&quot;No ha registrado previamente ninguna autorización en división 2160&quot;)]" sap:VirtualizedContainerService.HintSize="571,1002" sap2010:WorkflowViewState.IdRef="If_3">
+                <If Condition="[TextoError.Contains(&quot;No ha registrado previamente ninguna autorización en división 2160&quot;)]" DisplayName="Si el texto contiene  (No ha registrado previamente ninguna autorización en división 2160)" sap:VirtualizedContainerService.HintSize="571,1008" sap2010:WorkflowViewState.IdRef="If_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,17 +129,16 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="426,855" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence sap:VirtualizedContainerService.HintSize="426,859" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Name="variable1" />
-                        <Variable x:TypeArguments="s:String[]" Name="Array_Datos" />
+                        <Variable x:TypeArguments="s:String[]" Name="ArrayDatos" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en boton Finalizar" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en boton Finalizar" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="37" OffsetY="14" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -152,7 +153,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en boton si" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en boton si" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="99" OffsetY="3" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -167,18 +168,18 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Output\Invalidas\&quot;+in_Archivo+&quot;.XML&quot;)]" DisplayName="Mover archivo" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_Archivo]" />
+                      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Output\Invalidas\&quot;+in_Archivo+&quot;.XML&quot;)]" DisplayName="Mover archivo" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_Archivo]" />
                       <Assign DisplayName="Asignamos datos a arreglo" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="s:String[]">[Array_Datos]</OutArgument>
+                          <OutArgument x:TypeArguments="s:String[]">[ArrayDatos]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="s:String[]">[{in_No_Doc,in_SAP_Texto,DateTime.Now.ToString,"Error: No ha registrado previamente ninguna autorización en división 2160"}]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Agregar incidentes a excel" sap:VirtualizedContainerService.HintSize="384,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Agregar incidentes a excel" sap:VirtualizedContainerService.HintSize="384,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="s:String[]" x:Key="in_Data">[Array_Datos]</InArgument>
+                          <InArgument x:TypeArguments="s:String[]" x:Key="in_Data">[ArrayDatos]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">

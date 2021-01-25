@@ -58,7 +58,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1243,1902</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1059,1902</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Validacion_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -122,7 +122,6 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>AutoCloseMsgBox</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -135,7 +134,6 @@
     <Flowchart.Variables>
       <Variable x:TypeArguments="s:String[]" Name="ArrayDatos" />
       <Variable x:TypeArguments="x:String" Name="Failure" />
-      <Variable x:TypeArguments="x:String" Name="SimulacionSaldo" />
       <Variable x:TypeArguments="x:String" Name="TypeTax" />
       <Variable x:TypeArguments="x:Boolean" Name="Warning" />
       <Variable x:TypeArguments="x:Boolean" Name="Simulacion" />
@@ -331,7 +329,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1022,6676" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1022,6703" sap2010:WorkflowViewState.IdRef="Sequence_73">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="PosicionesActual" />
                     <Variable x:TypeArguments="x:String" Name="Posiciones" />
@@ -362,7 +360,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:Click>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_Error workflow" sap:VirtualizedContainerService.HintSize="980,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="SAP\SAP_Error.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_Error workflow" sap:VirtualizedContainerService.HintSize="980,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="SAP\SAP_Error.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_Archivo">[in_Archivo]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_No_Doc">[in_No_Doc]</InArgument>
@@ -374,7 +372,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="980,2753" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="980,2766" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -382,7 +380,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="942,2283" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                      <Sequence sap:VirtualizedContainerService.HintSize="942,2286" sap2010:WorkflowViewState.IdRef="Sequence_70">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="ErrorDocReg" />
                           <Variable x:TypeArguments="x:Boolean" Name="ExistsMensaje" />
@@ -452,14 +450,14 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:Click>
-                        <If Condition="[ErrorDocReg.Contains(&quot;F5117&quot;)]" DisplayName="El error es F5117?" sap:VirtualizedContainerService.HintSize="900,688" sap2010:WorkflowViewState.IdRef="If_19">
+                        <If Condition="[ErrorDocReg.Contains(&quot;F5117&quot;)]" DisplayName="El error es F5117?" sap:VirtualizedContainerService.HintSize="900,689" sap2010:WorkflowViewState.IdRef="If_19">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Enviar tecla enter si esta el error F5117" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="enter" KeyModifiers="None" SpecialKey="True">
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Enviar tecla enter si esta el error F5117" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="enter" KeyModifiers="None" SpecialKey="True">
                               <ui:SendHotkey.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b5beafe-55ab-4405-860a-60a489167653" InformativeScreenshot="8a661248f974707f0779806b43e60024" Selector="&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/ctxtINVFO-ACCNT' /&gt;">
                                   <ui:Target.TimeoutMS>
@@ -478,9 +476,9 @@
                             </ui:SendHotkey>
                           </If.Then>
                           <If.Else>
-                            <If Condition="[ErrorDocReg.Contains(&quot;F5202&quot;)=False]" DisplayName="El error es F5202?" sap:VirtualizedContainerService.HintSize="521,540" sap2010:WorkflowViewState.IdRef="If_28">
+                            <If Condition="[ErrorDocReg.Contains(&quot;F5202&quot;)=False]" DisplayName="El error es F5202?" sap:VirtualizedContainerService.HintSize="521,541" sap2010:WorkflowViewState.IdRef="If_28">
                               <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="376,392" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                <Sequence sap:VirtualizedContainerService.HintSize="376,393" sap2010:WorkflowViewState.IdRef="Sequence_74">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -508,7 +506,7 @@
                                       </ui:Target>
                                     </ui:Click.Target>
                                   </ui:Click>
-                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Enviar tecla enter si no es el error F5202" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Enviar tecla enter si no es el error F5202" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="enter" KeyModifiers="None" SpecialKey="True">
                                     <ui:SendHotkey.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b5beafe-55ab-4405-860a-60a489167653" InformativeScreenshot="f3f848b498d1ea6bdde8bd9104d950be" Selector="&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/txtINVFO-WRBTR' /&gt;">
                                         <ui:Target.TimeoutMS>
@@ -539,11 +537,9 @@
                             </ui:Target>
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_ErrorVerifique workflow" sap:VirtualizedContainerService.HintSize="900,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="SAP\SAP_ErrorVerifique.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SAP_ErrorVerifique workflow" sap:VirtualizedContainerService.HintSize="900,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="SAP\SAP_ErrorVerifique.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_ExistsMensaje">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ExistsMensaje" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_ExistsMensaje">[ExistsMensaje]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Statusbar No'" sap:VirtualizedContainerService.HintSize="900,106" sap2010:WorkflowViewState.IdRef="GetValue_12">
@@ -561,7 +557,7 @@
                             <OutArgument x:TypeArguments="x:String">[error2160]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
-                        <If Condition="[error2160.Contains(&quot;No ha registrado previamente ninguna&quot;)]" DisplayName="El error contiene el texto No ha registrado previamente ninguna?" sap:VirtualizedContainerService.HintSize="900,553" sap2010:WorkflowViewState.IdRef="If_22">
+                        <If Condition="[error2160.Contains(&quot;No ha registrado previamente ninguna&quot;)]" DisplayName="El error contiene el texto No ha registrado previamente ninguna?" sap:VirtualizedContainerService.HintSize="521,554" sap2010:WorkflowViewState.IdRef="If_22">
                           <If.Then>
                             <Sequence sap:VirtualizedContainerService.HintSize="376,406" sap2010:WorkflowViewState.IdRef="Sequence_69">
                               <sap:WorkflowViewStateService.ViewState>
@@ -620,7 +616,7 @@
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="946,160" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="946,163" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -631,12 +627,12 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Intento salir de un error&quot;]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Intento salir de un error&quot;]" />
                         </ActivityAction>
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
-                  <If Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.16&quot;)]" DisplayName="If IVA -16%" sap:VirtualizedContainerService.HintSize="980,519" sap2010:WorkflowViewState.IdRef="If_23">
+                  <If Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.16&quot;)]" DisplayName="If IVA -16%" sap:VirtualizedContainerService.HintSize="980,521" sap2010:WorkflowViewState.IdRef="If_23">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -687,7 +683,7 @@
                       </Sequence>
                     </If.Then>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Valid is kept 0% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.00&quot;)]" DisplayName="If- IVA - 0%" sap:VirtualizedContainerService.HintSize="980,312" sap2010:WorkflowViewState.IdRef="If_24">
+                  <If sap2010:Annotation.AnnotationText="Valid is kept 0% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.00&quot;)]" DisplayName="If- IVA - 0%" sap:VirtualizedContainerService.HintSize="980,314" sap2010:WorkflowViewState.IdRef="If_24">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -710,7 +706,7 @@
                       </ui:TypeInto>
                     </If.Then>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Valid is kept 8% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.08&quot;)]" DisplayName="If- IVA - 8%" sap:VirtualizedContainerService.HintSize="980,312" sap2010:WorkflowViewState.IdRef="If_25">
+                  <If sap2010:Annotation.AnnotationText="Valid is kept 8% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.08&quot;)]" DisplayName="If- IVA - 8%" sap:VirtualizedContainerService.HintSize="980,314" sap2010:WorkflowViewState.IdRef="If_25">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -733,7 +729,7 @@
                       </ui:TypeInto>
                     </If.Then>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Valid is kept 11% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.11&quot;)]" DisplayName="If - IVA - 11%" sap:VirtualizedContainerService.HintSize="980,312" sap2010:WorkflowViewState.IdRef="If_26">
+                  <If sap2010:Annotation.AnnotationText="Valid is kept 11% vat " Condition="[in_XML_IvaPorcentaje.Contains(&quot;0.11&quot;)]" DisplayName="If - IVA - 11%" sap:VirtualizedContainerService.HintSize="980,314" sap2010:WorkflowViewState.IdRef="If_26">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -829,9 +825,9 @@
                       <InArgument x:TypeArguments="x:String">[Posiciones]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:InterruptibleWhile Condition="[PosicionesActual &lt;&gt; &quot;0&quot;]" DisplayName="While" sap:VirtualizedContainerService.HintSize="980,1186" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                  <ui:InterruptibleWhile Condition="[PosicionesActual &lt;&gt; &quot;0&quot;]" DisplayName="While" sap:VirtualizedContainerService.HintSize="980,1191" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
                     <ui:InterruptibleWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1021" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1024" sap2010:WorkflowViewState.IdRef="Sequence_72">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="Selector" />
                           <Variable x:TypeArguments="x:Boolean" Name="AdvertenciaIva" />
@@ -895,7 +891,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:UiElementExists>
-                        <If Condition="[AdvertenciaIva]" DisplayName="Existe una advertencia?" sap:VirtualizedContainerService.HintSize="484,263" sap2010:WorkflowViewState.IdRef="If_27">
+                        <If Condition="[AdvertenciaIva]" DisplayName="Existe una advertencia?" sap:VirtualizedContainerService.HintSize="484,266" sap2010:WorkflowViewState.IdRef="If_27">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -903,7 +899,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="enter" KeyModifiers="None" SpecialKey="True">
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="enter" KeyModifiers="None" SpecialKey="True">
                               <ui:SendHotkey.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1db77fb1-da80-4df0-871a-e7ac6e4be29b">
                                   <ui:Target.TimeoutMS>
@@ -1377,7 +1373,7 @@
                                                           <av:PointCollection x:Key="ConnectorLocation">240,1582 240,1632</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <Sequence DisplayName="Agregar incidentes a excel y salir de la factura" sap:VirtualizedContainerService.HintSize="376,1414" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                      <Sequence DisplayName="Agregar incidentes a excel y salir de la factura" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                         <Sequence.Variables>
                                                           <Variable x:TypeArguments="s:DateTime" Name="FechaActual" />
                                                           <Variable x:TypeArguments="s:DateTime" Name="Time" />
