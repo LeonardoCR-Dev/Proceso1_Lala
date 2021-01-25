@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>967,1075</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>960,1115</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -86,30 +86,15 @@
     <Flowchart sap2010:Annotation.AnnotationText="Descarga facturas de Intranet y valida que los datos sean correctos en SA, ademas de agregar retenciones en caso de que sean necesarias&#xA;" DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="864,746" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <Flowchart.Variables>
         <Variable x:TypeArguments="x:String" Default="[in_TransactionItem]" Name="Id" />
-        <Variable x:TypeArguments="x:String" Name="XmlImport" />
-        <Variable x:TypeArguments="x:String" Name="FileXml" />
-        <Variable x:TypeArguments="x:String" Name="XmlUuid" />
-        <Variable x:TypeArguments="x:String" Name="XmlDate" />
-        <Variable x:TypeArguments="x:String" Name="XmlText" />
-        <Variable x:TypeArguments="x:String" Name="XmlIvaNumber" />
-        <Variable x:TypeArguments="x:String" Name="XmlIva" />
-        <Variable x:TypeArguments="x:String" Name="XmlFolio" />
-        <Variable x:TypeArguments="x:String" Name="XmlRetencion" />
-        <Variable x:TypeArguments="x:Boolean" Name="Retencion" />
-        <Variable x:TypeArguments="x:String" Name="XmlNameEmisor" />
-        <Variable x:TypeArguments="x:String" Name="SapDate" />
-        <Variable x:TypeArguments="x:String" Name="SapText" />
-        <Variable x:TypeArguments="x:String" Name="SapImport" />
-        <Variable x:TypeArguments="x:String" Name="SapReference" />
         <Variable x:TypeArguments="x:String" Name="SapAcredor" />
         <Variable x:TypeArguments="x:String" Name="SapMoneda" />
         <Variable x:TypeArguments="x:String" Name="SapNoDoc" />
-        <Variable x:TypeArguments="x:String" Name="SapTotal" />
-        <Variable x:TypeArguments="x:Boolean" Name="ExistFactura" />
-        <Variable x:TypeArguments="s:String[]" Name="ArrayData" />
         <Variable x:TypeArguments="x:Boolean" Name="Ocupado" />
-        <Variable x:TypeArguments="x:String" Name="NoDoc" />
         <Variable x:TypeArguments="x:String" Default="0" Name="Fallas" />
+        <Variable x:TypeArguments="x:String" Name="FileXml" />
+        <Variable x:TypeArguments="x:String" Name="XmlUuid" />
+        <Variable x:TypeArguments="x:String" Name="NoDoc" />
+        <Variable x:TypeArguments="x:Boolean" Name="ExistFactura" />
       </Flowchart.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -136,14 +121,25 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Select_Factura_SAP workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="SAP\SAP_Seleccionar_factura.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Ocupado">[ocupado]</OutArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="Id">[id]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="Transaccion">[in_TransactionNumber]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_Fallos">[fallas]</InArgument>
+            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Ocupado">
+              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Ocupado" />
+            </OutArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Id">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Id" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Transaccion">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionNumber" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_Fallos">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Fallas" />
+            </InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
         <FlowStep.Next>
-          <FlowDecision x:Name="__ReferenceID1" Condition="[ocupado]" DisplayName="factura ocupada?" sap:VirtualizedContainerService.HintSize="97,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+          <FlowDecision x:Name="__ReferenceID1" DisplayName="factura ocupada?" sap:VirtualizedContainerService.HintSize="97,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+            <FlowDecision.Condition>
+              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Ocupado" />
+            </FlowDecision.Condition>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -169,8 +165,8 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <m:AutoCloseMessageBox ChosenButton="{x:Null}" Buttons="Ok" CloseMessageBox="2" DisplayName="Auto close message box" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AutoCloseMessageBox_3" Message="La factura esta ocupada" Title="Mensaje" />
-                  <Throw Exception="[New BusinessRuleException(&quot;Esta ocupada la factura&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                  <m:AutoCloseMessageBox ChosenButton="{x:Null}" Buttons="Ok" CloseMessageBox="2" DisplayName="Auto close message box 2" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AutoCloseMessageBox_3" Message="La factura esta ocupada" Title="Mensaje" />
+                  <Throw DisplayName="Throw 2" Exception="[New BusinessRuleException(&quot;Esta ocupada la factura&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
                 </Sequence>
               </FlowStep>
             </FlowDecision.True>
@@ -189,7 +185,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'CTextField Texto'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Obtener UUID'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="251bdee3-0fd0-451e-b783-8501973c6f8a" InformativeScreenshot="ae3a2eeea4f679f80e91bb8902931df7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/txtINVFO-BELNR' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -204,7 +200,7 @@
                       <OutArgument x:TypeArguments="x:String">[noDoc]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
-                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'CTextField Texto'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Obtener dato SAP'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="251bdee3-0fd0-451e-b783-8501973c6f8a" InformativeScreenshot="ae3a2eeea4f679f80e91bb8902931df7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tratar factura acreedor reg.prelim.*' /&gt;&lt;sap id='usr/tabsTS/tabpMAIN/ssubPAGE:SAPLFDCB:0010/ctxtINVFO-SGTXT' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -216,26 +212,35 @@
                       </ui:Target>
                     </ui:GetValue.Target>
                     <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[xmlUuid]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[XmlUuid]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Intranet\INTRANET_Search_UUID.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <OutArgument x:TypeArguments="x:String" x:Key="out_NameXML">[fileXml]</OutArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_UUID">[xmlUuid]</InArgument>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validation">[existFactura]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_NameXML">
+                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="FileXml" />
+                      </OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_UUID">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlUuid" />
+                      </InArgument>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validation">
+                        <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ExistFactura" />
+                      </OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
                 <FlowStep.Next>
-                  <FlowDecision x:Name="__ReferenceID4" Condition="[existFactura]" DisplayName="Existe factura en intranet?" sap:VirtualizedContainerService.HintSize="141,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                  <FlowDecision x:Name="__ReferenceID4" DisplayName="Existe factura en intranet?" sap:VirtualizedContainerService.HintSize="141,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                    <FlowDecision.Condition>
+                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ExistFactura" />
+                    </FlowDecision.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <av:Point x:Key="ShapeLocation">437.5,454</av:Point>
                         <av:Size x:Key="ShapeSize">141,87</av:Size>
                         <av:PointCollection x:Key="FalseConnector">579.5,497.5 629.5,497.5</av:PointCollection>
-                        <av:PointCollection x:Key="TrueConnector">437.5,497.5 387.5,497.5</av:PointCollection>
+                        <av:PointCollection x:Key="TrueConnector">437.5,497.5 407.5,497.5 407.5,520 380,520</av:PointCollection>
                         <x:String x:Key="TrueLabel">Si</x:String>
                         <x:String x:Key="FalseLabel">No</x:String>
                       </scg:Dictionary>
@@ -244,12 +249,28 @@
                       <FlowStep x:Name="__ReferenceID6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">187.5,463.5</av:Point>
+                            <av:Point x:Key="ShapeLocation">180,487</av:Point>
                             <av:Size x:Key="ShapeSize">200,66</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">287.5,529.5 287.5,581.5</av:PointCollection>
+                            <av:PointCollection x:Key="ConnectorLocation">280,553 280,581.5 287,581.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <Sequence DisplayName="Descargar factura y validar" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="XmlDate" />
+                            <Variable x:TypeArguments="x:String" Name="XmlText" />
+                            <Variable x:TypeArguments="x:String" Name="XmlIva" />
+                            <Variable x:TypeArguments="x:String" Name="XmlIvaNumber" />
+                            <Variable x:TypeArguments="x:String" Name="XmlFolio" />
+                            <Variable x:TypeArguments="x:String" Name="XmlRetencion" />
+                            <Variable x:TypeArguments="x:Boolean" Name="Retencion" />
+                            <Variable x:TypeArguments="x:String" Name="XmlNameEmisor" />
+                            <Variable x:TypeArguments="x:String" Name="XmlImport" />
+                            <Variable x:TypeArguments="x:String" Name="SapDate" />
+                            <Variable x:TypeArguments="x:String" Name="SapText" />
+                            <Variable x:TypeArguments="x:String" Name="SapImport" />
+                            <Variable x:TypeArguments="x:String" Name="SapReference" />
+                            <Variable x:TypeArguments="x:String" Name="SapTotal" />
+                          </Sequence.Variables>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -257,25 +278,55 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtractDataXML workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="XML\ExtractDataXML.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">[xmlDate]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">[xmlText]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">[xmlIva]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">[xmlIvaNumber]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">[xmlFolio]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">[xmlRetencion]</OutArgument>
-                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">[retencion]</OutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">[fileXml]</InArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">[xmlNameEmisor]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Total">[sapTotal]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">[xmlImport]</OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Fecha">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XmlDate" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Texto">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XmlText" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_IvaPorcentaje">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XmlIva" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Iva">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XmlIvaNumber" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_FolioFactura">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XmlFolio" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Retencion">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XmlRetencion" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_TieneRetencion">
+                                <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Retencion" />
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_ArchivoXML">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FileXml" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_NameEmisor">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XmlNameEmisor" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Total">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="SapTotal" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_ImporteTotal">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="XmlImport" />
+                              </OutArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get_Info workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="SAP\SAP_Obtener_Informacion.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Date">[sapDate]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Text">[sapText]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Import">[sapImport]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_Reference">[sapReference]</OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Date">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="SapDate" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Text">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="SapText" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Import">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="SapImport" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Reference">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="SapReference" />
+                              </OutArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validacion workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="SAP\SAP_Validacion.xaml">
@@ -284,55 +335,55 @@
                                 <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_Validation" />
                               </OutArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Fecha">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sapDate" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SapDate" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Texto">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sapText" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SapText" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Importe">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sapImport" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SapImport" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Referencia">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sapReference" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SapReference" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_ImporteTotal">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="xmlImport" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlImport" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_Fecha">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="xmlDate" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlDate" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_NombreEmisor">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="xmlNameEmisor" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlNameEmisor" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_Texto">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="xmlText" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlText" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_IvaPorcentaje">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="xmlIva" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlIva" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_Iva">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="xmlIvaNumber" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlIvaNumber" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_FolioFactura">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="xmlFolio" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlFolio" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:Boolean" x:Key="in_XML_TieneRetencion">
-                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="retencion" />
+                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Retencion" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_Retencion">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="xmlRetencion" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="XmlRetencion" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_XML_Total">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sapTotal" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SapTotal" />
                               </InArgument>
                               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ValidationRetentions">
                                 <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_ValidationWithholdings" />
                               </OutArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_Archivo">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="fileXml" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FileXml" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_No_Doc">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="noDoc" />
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NoDoc" />
                               </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
@@ -364,13 +415,13 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Output\Invalidas\&quot;+xmlUuid+&quot;.XML&quot;)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="[fileXml]" />
-                                  <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                  <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Output\Invalidas\&quot;+XmlUuid+&quot;.XML&quot;)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="[FileXml]" />
+                                  <Assign DisplayName="Assign numero de fallas" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[Fallas]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
-                                      <InArgument x:TypeArguments="x:String">[(Convert.ToDecimal(fallas)+1).ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String">[(Convert.ToDecimal(Fallas)+1).ToString]</InArgument>
                                     </Assign.Value>
                                   </Assign>
                                 </Sequence>
@@ -384,7 +435,7 @@
                                     <av:Size x:Key="ShapeSize">200,51</av:Size>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Output\Validas\&quot;+xmlUuid+&quot;.XML&quot;)]" DisplayName="Mover factura a validas" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True" Path="[fileXml]" />
+                                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Path.Combine(Environment.CurrentDirectory,&quot;data\Output\Validas\&quot;+XmlUuid+&quot;.XML&quot;)]" DisplayName="Mover factura a validas" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True" Path="[FileXml]" />
                               </FlowStep>
                             </FlowDecision.False>
                           </FlowDecision>
@@ -400,23 +451,28 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <Sequence DisplayName="Pasar a la siguiente transaccion" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="s:String[]" Name="ArrayData" />
+                          </Sequence.Variables>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign DisplayName="Assign numero de documento, uuid de xml" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                             <Assign.To>
-                              <OutArgument x:TypeArguments="s:String[]">[arrayData]</OutArgument>
+                              <OutArgument x:TypeArguments="s:String[]">[ArrayData]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="s:String[]">[{noDoc,xmlUuid,DateTime.Now.ToString,"-No hay factura descargable"}]</InArgument>
+                              <InArgument x:TypeArguments="s:String[]">[{NoDoc,XmlUuid,DateTime.Now.ToString,"-No hay factura descargable"}]</InArgument>
                             </Assign.Value>
                           </Assign>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel_Incidents workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Common\Excel_Incidents.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="s:String[]" x:Key="in_Data">[arrayData]</InArgument>
+                              <InArgument x:TypeArguments="s:String[]" x:Key="in_Data">
+                                <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ArrayData" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -433,8 +489,8 @@
                               <InArgument x:TypeArguments="x:Boolean" x:Key="in_Posicion">False</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <m:AutoCloseMessageBox ChosenButton="{x:Null}" Buttons="Ok" CloseMessageBox="2" DisplayName="Auto close message box" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AutoCloseMessageBox_4" Message="No hay factura en la intranet" Title="Mensaje" />
-                          <Throw Exception="[New BusinessRuleException(&quot;Esta ocupada la factura&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                          <m:AutoCloseMessageBox ChosenButton="{x:Null}" Buttons="Ok" CloseMessageBox="2" DisplayName="Auto close message box 3" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AutoCloseMessageBox_4" Message="No hay factura en la intranet" Title="Mensaje" />
+                          <Throw DisplayName="Throw 3" Exception="[New BusinessRuleException(&quot;Esta ocupada la factura&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
                         </Sequence>
                       </FlowStep>
                     </FlowDecision.False>
@@ -453,7 +509,7 @@
             <av:PointCollection x:Key="ConnectorLocation">310,170 310,224</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign DisplayName="Assign Acumular fallas" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[Fallas]</OutArgument>
           </Assign.To>
