@@ -79,18 +79,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign Validacion" sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:Boolean">[validation]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean">[Validation]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
       </Assign.Value>
     </Assign>
     <Sequence sap2010:Annotation.AnnotationText="Attach al navegador, para posteriormente escribir el 'UUID' de la factura.  Despues hacer click en el boton 'consultar' y finalmente hacer click en el boton de 'xml'." DisplayName="DownloadXML" sap:VirtualizedContainerService.HintSize="759,1662" sap2010:WorkflowViewState.IdRef="Sequence_1">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="ExistDownload" />
-      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -107,6 +104,7 @@
             <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="683,1382" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="ExistIcon" />
+                <Variable x:TypeArguments="x:Boolean" Name="ExistDownload" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -166,7 +164,7 @@
                   </ui:Target>
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
-              <If Condition="[existIcon]" sap:VirtualizedContainerService.HintSize="641,295" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[existIcon]" DisplayName="If Existe el icono de XML" sap:VirtualizedContainerService.HintSize="641,295" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
                   <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" sap2010:Annotation.AnnotationText="Delay por error en la transferencia de datos usando VPN" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
@@ -197,7 +195,7 @@
                   </ui:Click>
                 </If.Then>
                 <If.Else>
-                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign DisplayName="Assign Validacion fallida" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[Validation]</OutArgument>
                     </Assign.To>
@@ -216,7 +214,7 @@
                   </ui:Target>
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
-              <If Condition="[ExistDownload]" sap:VirtualizedContainerService.HintSize="641,259" sap2010:WorkflowViewState.IdRef="If_2">
+              <If Condition="[ExistDownload]" DisplayName="If Existe descarga" sap:VirtualizedContainerService.HintSize="641,259" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Then>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke INTRANET_SaveDocument workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Intranet\INTRANET_SaveDocument.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
@@ -226,7 +224,7 @@
                   </ui:InvokeWorkflowFile>
                 </If.Then>
                 <If.Else>
-                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <Assign DisplayName="Assign Validacion fallida 2" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[Validation]</OutArgument>
                     </Assign.To>
@@ -246,7 +244,7 @@
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign DisplayName="Assign Validacion final" sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[out_Validation]</OutArgument>
       </Assign.To>
