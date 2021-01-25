@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>960,2350</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>960,2259</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Intranet_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -71,15 +71,13 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Es necesario debido a fallas en el sitio web, abrir el navegador, sin URL y posteriormente, ingresar dos veces seguidas la dirección." DisplayName="Intranet_Login" sap:VirtualizedContainerService.HintSize="828,2185" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Es necesario debido a fallas en el sitio web, abrir el navegador, sin URL y posteriormente, ingresar dos veces seguidas la dirección." DisplayName="Intranet_Login" sap:VirtualizedContainerService.HintSize="828,2094" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="existUser" />
-      <Variable x:TypeArguments="x:Boolean" Name="existLogin" />
-      <Variable x:TypeArguments="x:Boolean" Name="existAccount" />
-      <Variable x:TypeArguments="x:Boolean" Name="exist" />
-      <Variable x:TypeArguments="x:Boolean" Name="buttonOn" />
+      <Variable x:TypeArguments="x:Boolean" Name="ButtonOn" />
+      <Variable x:TypeArguments="x:Boolean" Name="Exist" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -88,28 +86,28 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="786,2062" sap2010:WorkflowViewState.IdRef="OpenBrowser_1">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="786,1971" sap2010:WorkflowViewState.IdRef="OpenBrowser_1">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="752,1961" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="752,1870" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleDoWhile Condition="[ButtonON = false]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="710,754" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile Condition="[ButtonON = false]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="710,662" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,589" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,497" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:UiElementExists DisplayName="Element Exists 'A  btnLogin'" Exists="[ButtonON]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists DisplayName="Element Exists 'A  btnLogin'" Exists="[ButtonOn]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="beaff307-060a-4f76-b029-5380914bacd1" InformativeScreenshot="1434bfd620a144f0791b2ade00528590" Selector="&lt;webctrl id='btnLogin' tag='A' /&gt;" TimeoutMS="3000">
                         <ui:Target.WaitForReady>
@@ -118,22 +116,13 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[ButtonON &lt;&gt; True]" sap:VirtualizedContainerService.HintSize="521,351" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[ButtonON &lt;&gt; True]" sap:VirtualizedContainerService.HintSize="484,259" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke INTRANET_Login_Type_Url workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Intranet\INTRANET_Login_Type_Url.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_UrlLala">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_UrlLala" />
-                            </InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
-                        </ui:InvokeWorkflowFile>
-                      </Sequence>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke INTRANET_Login_Type_Url workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Intranet\INTRANET_Login_Type_Url.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_UrlLala">[in_UrlLala]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
                     </If.Then>
                   </If>
                 </Sequence>
@@ -145,20 +134,20 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InterruptibleDoWhile>
-            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Pagina principal 'Workbench'" sap:VirtualizedContainerService.HintSize="710,1075" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="62d40871364fa4da8d10963fbd17dbe6" Selector="&lt;html app='firefox.exe' title='Workbench | Bienvenido' /&gt;">
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Pagina principal 'Workbench'" sap:VirtualizedContainerService.HintSize="710,1076" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="62d40871364fa4da8d10963fbd17dbe6" Selector="&lt;html app='firefox.exe' title='Workbench | Bienvenido' /&gt;">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676,929" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676,930" sap2010:WorkflowViewState.IdRef="Sequence_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:UiElementExists DisplayName="Verificar existencia boton 'Entrar'" Exists="[exist]" sap:VirtualizedContainerService.HintSize="634,106" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
+                    <ui:UiElementExists DisplayName="Verificar existencia boton 'Entrar'" Exists="[Exist]" sap:VirtualizedContainerService.HintSize="634,106" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
                       <ui:UiElementExists.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="82fd759a-12eb-41c1-b810-0e916453730b" InformativeScreenshot="013a4f6bfec3e30f8e5cf3d342e8e851" Selector="&lt;webctrl parentid='btnLogin' tag='SPAN' /&gt;" TimeoutMS="3000">
                           <ui:Target.WaitForReady>
@@ -172,7 +161,10 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:UiElementExists>
-                    <Flowchart sap:VirtualizedContainerService.HintSize="634,691" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+                    <Flowchart sap:VirtualizedContainerService.HintSize="634,692" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+                      <Flowchart.Variables>
+                        <Variable x:TypeArguments="x:Boolean" Name="ExistAccount" />
+                      </Flowchart.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,13 +172,16 @@
                           <av:Point x:Key="ShapeLocation">100,12.5</av:Point>
                           <av:Size x:Key="ShapeSize">60,75</av:Size>
                           <av:PointCollection x:Key="ConnectorLocation">160,50 300,50 300,86.5</av:PointCollection>
-                          <x:Double x:Key="Height">655</x:Double>
+                          <x:Double x:Key="Height">656.5</x:Double>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <Flowchart.StartNode>
                         <x:Reference>__ReferenceID4</x:Reference>
                       </Flowchart.StartNode>
-                      <FlowDecision x:Name="__ReferenceID4" Condition="[exist]" DisplayName="Existe el boton de entrar?" sap:VirtualizedContainerService.HintSize="138,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                      <FlowDecision x:Name="__ReferenceID4" DisplayName="Existe el boton de entrar?" sap:VirtualizedContainerService.HintSize="138,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                        <FlowDecision.Condition>
+                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Exist" />
+                        </FlowDecision.Condition>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">231,86.5</av:Point>
@@ -233,7 +228,7 @@
                                   </ui:Target>
                                 </ui:Click.Target>
                               </ui:Click>
-                              <ui:UiElementExists DisplayName="Verificar si existe 'Usar otra cuenta'" Exists="[existAccount]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
+                              <ui:UiElementExists DisplayName="Verificar si existe 'Usar otra cuenta'" Exists="[ExistAccount]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
                                 <ui:UiElementExists.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="abe4eb63-cb84-4603-a53f-15b0b638f948" InformativeScreenshot="d9f8da87c47b999b598a30a124d10dde" Selector="&lt;html app='firefox.exe' title='Iniciar sesión*' /&gt;&lt;webctrl id='otherTileText' tag='DIV' innertext='Usar otra cuenta' /&gt;" TimeoutMS="3000">
                                     <ui:Target.WaitForReady>
@@ -244,13 +239,16 @@
                               </ui:UiElementExists>
                             </Sequence>
                             <FlowStep.Next>
-                              <FlowDecision x:Name="__ReferenceID1" Condition="[existAccount]" DisplayName="Esta registrada la cuenta?" sap:VirtualizedContainerService.HintSize="138,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                              <FlowDecision x:Name="__ReferenceID1" DisplayName="Esta registrada la cuenta?" sap:VirtualizedContainerService.HintSize="138,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                <FlowDecision.Condition>
+                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ExistAccount" />
+                                </FlowDecision.Condition>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">231,336.5</av:Point>
                                     <av:Size x:Key="ShapeSize">138,87</av:Size>
                                     <av:PointCollection x:Key="TrueConnector">231,380 110,380 110,487</av:PointCollection>
-                                    <av:PointCollection x:Key="FalseConnector">369,380 450,380 450,487</av:PointCollection>
+                                    <av:PointCollection x:Key="FalseConnector">369,380 450,380 450,503.5</av:PointCollection>
                                     <x:String x:Key="FalseLabel">No</x:String>
                                     <x:String x:Key="TrueLabel">Si</x:String>
                                   </scg:Dictionary>
@@ -265,6 +263,9 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Sequence sap2010:Annotation.AnnotationText="Verifica si existe la cuenta de correo electronico guardada previamente. En caso de que si, la selecciona, sino  selecciona usar otra cuenta, e ingresa las credenciales." DisplayName="Selecciona la cuenta" sap:VirtualizedContainerService.HintSize="200,168" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:Boolean" Name="ExistUser" />
+                                      </Sequence.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -277,13 +278,13 @@
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                             </ActivityAction.Argument>
-                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="823,497" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="823,497" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:UiElementExists DisplayName="Verificar que existe una cuenta registrada" Exists="[existUser]" sap:VirtualizedContainerService.HintSize="781,106" sap2010:WorkflowViewState.IdRef="UiElementExists_11">
+                                              <ui:UiElementExists DisplayName="Verificar que existe una cuenta registrada" Exists="[ExistUser]" sap:VirtualizedContainerService.HintSize="781,106" sap2010:WorkflowViewState.IdRef="UiElementExists_16">
                                                 <ui:UiElementExists.Target>
                                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c8c05cc5-910b-410a-b2d1-86c2a99cb9df" InformativeScreenshot="6d2c8e004928955680735bb2a39d204e" Selector="[&quot;&lt;webctrl aaname='&quot;+in_User+&quot;' parentid='tilesHolder' tag='DIV' /&gt;&quot;]" TimeoutMS="3000">
                                                     <ui:Target.WaitForReady>
@@ -292,28 +293,20 @@
                                                   </ui:Target>
                                                 </ui:UiElementExists.Target>
                                               </ui:UiElementExists>
-                                              <If Condition="[existUser]" sap:VirtualizedContainerService.HintSize="781,259" sap2010:WorkflowViewState.IdRef="If_11">
+                                              <If Condition="[ExistUser]" sap:VirtualizedContainerService.HintSize="781,259" sap2010:WorkflowViewState.IdRef="If_15">
                                                 <If.Then>
-                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke INTRANET_Login_Existing_Account workflow" sap:VirtualizedContainerService.HintSize="367,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Intranet\INTRANET_Login_Existing_Account.xaml">
+                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke INTRANET_Login_Existing_Account workflow" sap:VirtualizedContainerService.HintSize="367,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Intranet\INTRANET_Login_Existing_Account.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                      <InArgument x:TypeArguments="x:String" x:Key="in_User">
-                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_User" />
-                                                      </InArgument>
-                                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Pass">
-                                                        <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_Pass" />
-                                                      </InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_User">[in_User]</InArgument>
+                                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Pass">[in_Pass]</InArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
                                                   </ui:InvokeWorkflowFile>
                                                 </If.Then>
                                                 <If.Else>
-                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke INTRANET_Login_Another_Account workflow" sap:VirtualizedContainerService.HintSize="369,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Intranet\INTRANET_Login_Another_Account.xaml">
+                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke INTRANET_Login_Another_Account workflow" sap:VirtualizedContainerService.HintSize="369,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Intranet\INTRANET_Login_Another_Account.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                      <InArgument x:TypeArguments="x:String" x:Key="in_User">
-                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_User" />
-                                                      </InArgument>
-                                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Pass">
-                                                        <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_Pass" />
-                                                      </InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_User">[in_User]</InArgument>
+                                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Pass">[in_Pass]</InArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
                                                   </ui:InvokeWorkflowFile>
                                                 </If.Else>
@@ -329,18 +322,21 @@
                                   <FlowStep x:Name="__ReferenceID3">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">350,487</av:Point>
+                                        <av:Point x:Key="ShapeLocation">350,503.5</av:Point>
                                         <av:Size x:Key="ShapeSize">200,153</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Sequence sap2010:Annotation.AnnotationText="Si no existe una cuenta guardada previamente, ingresa el usuario y contraseña.&#xA;" DisplayName="Inicia Sesion" sap:VirtualizedContainerService.HintSize="200,153" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:Boolean" Name="ExistLogin" />
+                                      </Sequence.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:UiElementExists DisplayName="Element Exists 'Iniciar Sesión'" Exists="[existLogin]" sap:VirtualizedContainerService.HintSize="495,106" sap2010:WorkflowViewState.IdRef="UiElementExists_14">
+                                      <ui:UiElementExists DisplayName="Element Exists 'Iniciar Sesión'" Exists="[ExistLogin]" sap:VirtualizedContainerService.HintSize="495,106" sap2010:WorkflowViewState.IdRef="UiElementExists_14">
                                         <ui:UiElementExists.Target>
                                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="986c1431-cb11-4742-9dbe-2a4100222979" InformativeScreenshot="f5204d4131f3c2deed281c21126ed891" Selector="&lt;html app='firefox.exe' title='Iniciar sesión*' /&gt;&lt;webctrl aria-role='heading' tag='DIV' /&gt;" TimeoutMS="3000">
                                             <ui:Target.WaitForReady>
@@ -349,7 +345,7 @@
                                           </ui:Target>
                                         </ui:UiElementExists.Target>
                                       </ui:UiElementExists>
-                                      <If Condition="[existLogin]" sap:VirtualizedContainerService.HintSize="495,260" sap2010:WorkflowViewState.IdRef="If_13">
+                                      <If Condition="[ExistLogin]" sap:VirtualizedContainerService.HintSize="495,260" sap2010:WorkflowViewState.IdRef="If_13">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -359,12 +355,8 @@
                                         <If.Then>
                                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke INTRANET_Login_New_Account workflow" sap:VirtualizedContainerService.HintSize="350,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Intranet\INTRANET_Login_New_Account.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Pass">
-                                                <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_Pass" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_User">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_User" />
-                                              </InArgument>
+                                              <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Pass">[in_Pass]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_User">[in_User]</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
                                         </If.Then>

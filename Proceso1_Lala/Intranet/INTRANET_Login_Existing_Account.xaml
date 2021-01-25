@@ -67,7 +67,7 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="INTRANET_Login_Existing_Account" sap:VirtualizedContainerService.HintSize="526,930" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="existSesion" />
+      <Variable x:TypeArguments="x:Boolean" Name="ExistSesion" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
